@@ -5,6 +5,7 @@ import { UIContextProvider } from "@/context/ui-context";
 import styles from "./main.module.scss";
 import { Header } from "../header/header";
 import { Footer } from "../footer/footer";
+import { Cursor } from "@/components/cursor/cursor";
 
 interface Props {
   children: React.ReactNode;
@@ -18,6 +19,7 @@ export default function Main({
 }: Props): React.ReactElement {
   return (
     <UIContextProvider>
+      <Cursor />
       <Header />
       {/* TODO - Add aside */}
 
