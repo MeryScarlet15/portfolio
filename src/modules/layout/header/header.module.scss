@@ -13,17 +13,22 @@
   background-color: rgba(24, 24, 27, 0.8); /* Equivalent to bg-zinc-900/80 */
   backdrop-filter: blur(10px);
   z-index: zIndex.$l;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header__nav {
+  width: 100%;
   max-width: layoutVariables.$maxWidth;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include media.maxLayoutUp {
+    padding: 16px 0;
+  }
 }
 
 .header__title {
