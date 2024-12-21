@@ -9,12 +9,13 @@ const clipPaths = {
 
 interface Props {
   direction: keyof typeof clipPaths;
+  className?: string;
 }
 
-export const PolygonHr = ({ direction = "topRight" }: Props) => {
+export const PolygonHr = ({ direction = "topRight", className }: Props) => {
   return (
     <hr
-      className={styles.polygon_hr}
+      className={`${styles.polygon_hr} ${className}`}
       style={{
         clipPath: clipPaths[direction],
       }}

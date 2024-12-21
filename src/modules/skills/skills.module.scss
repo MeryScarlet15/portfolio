@@ -1,5 +1,6 @@
 @use "src/app/design-system/colors.scss" as colors;
 @use "src/app/design-system/layout.scss" as layout;
+@use "src/app/design-system/media.scss" as media;
 @use "src/app/design-system/text.scss" as text;
 
 @keyframes fade-in-up {
@@ -13,18 +14,13 @@
   }
 }
 
-@keyframes fill-bar {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
 .skills {
   padding: 40px 0;
   background-color: colors.$black-60;
+
+  @include media.tabletUp {
+    padding: 80px 0;
+  }
 }
 
 .skills__container {
@@ -44,39 +40,9 @@
 .skills__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 24px;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-.skills__item {
-  background: colors.$black-50;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  opacity: 0;
-  transform: translateY(50px);
-  animation: fade-in-up 0.5s ease-in-out forwards;
-}
-
-.skills__item__name {
-  @extend .text__s_semi;
-  color: colors.$white;
-  margin-bottom: 1rem;
-}
-
-.skills__item__progress_bar {
-  height: 1rem;
-  background: colors.$black-50;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-
-.skills__item__progress {
-  height: 100%;
-  background-color: colors.$teal-50;
-  border-radius: 0.5rem;
-  width: 0;
-  animation: fill-bar 1s ease-out forwards;
 }

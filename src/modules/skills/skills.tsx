@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./skills.module.scss";
+import { Skill } from "./components/skill/skill";
 
 const skills = [
   { name: "JavaScript", level: 90 },
@@ -19,22 +20,7 @@ export const Skills: React.FC = () => {
         <h2 className={styles.skills__title}>Main Skills</h2>
         <div className={styles.skills__grid}>
           {skills.map((skill, index) => (
-            <div
-              className={`${styles.skills__item}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-              key={skill.name}
-            >
-              <h3 className={styles.skills__item__name}>{skill.name}</h3>
-              <div className={styles.skills__item__progress_bar}>
-                <div
-                  className={styles.skills__item__progress}
-                  style={{
-                    width: `${skill.level}%`,
-                    animationDelay: `${index * 0.1}s`,
-                  }}
-                ></div>
-              </div>
-            </div>
+            <Skill skill={skill} animationDelay={index * 0.1} />
           ))}
         </div>
       </div>

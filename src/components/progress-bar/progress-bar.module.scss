@@ -1,0 +1,25 @@
+@use "src/app/design-system/colors.scss" as colors;
+
+@keyframes fill-bar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.progress_bar {
+  height: 12px;
+  background: colors.$black-50;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress_bar__progress {
+  height: 100%;
+  background: colors.$teal-50;
+  border-radius: 12px;
+  width: 0;
+  animation: fill-bar 1s ease-out forwards;
+}

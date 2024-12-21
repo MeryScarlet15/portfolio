@@ -3,6 +3,7 @@
 @use "src/app/design-system/text.scss" as text;
 
 .footer {
+  position: relative;
   background-color: colors.$black-80;
   padding: 24px 0;
 }

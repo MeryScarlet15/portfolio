@@ -1,0 +1,28 @@
+@use "src/app/design-system/colors.scss" as colors;
+@use "src/app/design-system/text.scss" as text;
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill {
+  background: colors.$black-50;
+  border-radius: 8px;
+  padding: 16px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fade-in-up 0.5s ease-in-out forwards;
+}
+
+.skill__name {
+  @extend .text__s_semi;
+  color: colors.$white;
+  margin-bottom: 16px;
+}
