@@ -4,6 +4,7 @@ import Hero from "../modules/hero/hero";
 import Main from "../modules/layout/main/main";
 import { PolygonHr } from "@/components/hr/polygon-hr/polygon-hr";
 import { About } from "@/modules/about/about";
+import { Skills } from "@/modules/skills/skills";
 export const metadata: Metadata = {
   title: "Maria Amado | Full Stack Developer",
   description: "Full Stack Developer portfolio",
@@ -16,6 +17,7 @@ const Home = async () => {
       <PolygonHr direction="topRight" />
       <About />
       <PolygonHr direction="bottomLeft" />
+      <Skills />
     </Main>
   );
 };

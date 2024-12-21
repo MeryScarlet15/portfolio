@@ -1,0 +1,83 @@
+@use "src/app/design-system/colors.scss" as colors;
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fill-bar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.skills {
+  padding: 5rem 0;
+  background-color: colors.$black-80; // Background color
+  color: #fff;
+}
+
+.skills__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.skills__title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fade-in-up 0.5s ease-in-out forwards;
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.skills__item {
+  background: #2d2d2d;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fade-in-up 0.5s ease-in-out forwards;
+}
+
+.skills__item__name {
+  font-size: 1.125rem; // 18px
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.skills__item__progress_bar {
+  height: 1rem;
+  background: colors.$black-50;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.skills__item__progress {
+  height: 100%;
+  background-color: colors.$teal-50;
+  border-radius: 0.5rem;
+  width: 0;
+  animation: fill-bar 1s ease-out forwards;
+}

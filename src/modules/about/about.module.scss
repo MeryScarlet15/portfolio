@@ -38,7 +38,8 @@
 
 .about {
   @extend .section_wrapper;
-  padding: 40px 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
   color: #fff;
   flex-direction: column;
   gap: 24px;
@@ -70,22 +71,31 @@
 }
 
 .about__image {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  height: 340px;
+  opacity: 0;
   background-color: colors.$white;
   border-radius: 16px;
   transform: translateX(-50px);
   animation: fade-slide-left 0.5s ease-in-out forwards;
   animation-delay: 0.3s;
+
+  @include media.tabletUp {
+    width: 400px;
+    height: 400px;
+  }
 }
 
 .about__text {
   width: 100%;
-  max-width: 48%;
   opacity: 0;
   transform: translateX(50px);
   animation: fade-slide-right 0.5s ease-in-out forwards;
   animation-delay: 0.3s;
+
+  @include media.tabletUp {
+    max-width: 48%;
+  }
 }
 
 .about__image-element {
@@ -99,7 +109,7 @@
   padding-left: 1rem;
 
   p {
-    font-size: 1.125rem; // 18px
+    @extend .text__s;
     line-height: 1.6;
     color: #ccc;
   }
