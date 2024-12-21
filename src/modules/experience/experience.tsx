@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./experience.module.scss";
+import { Job } from "./components/job/job";
 const jobs = [
   {
     title: "Senior Fullstack Developer",
@@ -30,19 +31,7 @@ export const Experience: React.FC = () => {
       <h2 className={styles.experience__title}>Experience</h2>
       <div className={styles.experience__job_list}>
         {jobs.map((job, index) => (
-          <div
-            className={styles.experience__job_item}
-            style={{ animationDelay: `${index * 0.1}s` }}
-            key={index}
-          >
-            <h3 className={styles.experience__job_title}>{job.title}</h3>
-            <p className={styles.experience__job_meta}>
-              {job.company} | {job.period}
-            </p>
-            <p className={styles.experience__job_description}>
-              {job.description}
-            </p>
-          </div>
+          <Job job={job} animationDelay={index * 0.1} key={index} />
         ))}
       </div>
     </section>

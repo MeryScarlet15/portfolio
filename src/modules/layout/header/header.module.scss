@@ -47,7 +47,7 @@
 .header__li__button {
   @extend .text__ps;
   cursor: pointer;
-  color: colors.$black-40;
+  color: colors.$black-30;
   transition: color 0.3s;
 
   &:hover {

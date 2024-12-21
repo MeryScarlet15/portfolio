@@ -1,0 +1,42 @@
+@use "src/app/design-system/colors.scss" as colors;
+@use "src/app/design-system/text.scss" as text;
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.job {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: colors.$black-60;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fade-in-up 0.5s ease-in-out forwards;
+}
+
+.job__title {
+  @extend .text__s_semi;
+  color: colors.$teal-50;
+}
+
+.job__meta {
+  @extend .text;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+
+.job__description {
+  @extend .text;
+  color: colors.$white;
+}

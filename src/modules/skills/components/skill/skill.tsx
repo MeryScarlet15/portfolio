@@ -7,14 +7,18 @@ interface Props {
     name: string;
     level: number;
   };
-  animationDelay: number;
+  animationDelay?: number;
 }
+
+const DEFAULT_ANIMATION_DELAY = 0;
 
 export const Skill = ({ skill, animationDelay }: Props) => {
   return (
     <div
       className={`${styles.skill}`}
-      style={{ animationDelay: `${animationDelay}s` }}
+      style={{
+        animationDelay: `${animationDelay || DEFAULT_ANIMATION_DELAY}s`,
+      }}
       key={skill.name}
     >
       <h3 className={styles.skill__name}>{skill.name}</h3>
