@@ -1,0 +1,67 @@
+@use "src/app/design-system/layout.scss" as layout;
+@use "src/app/design-system/colors.scss" as colors;
+@use "src/app/design-system/text.scss" as text;
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.experience {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.experience__title {
+  @extend .text__l_medium;
+  color: colors.$white;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fade-in-up 0.5s ease-in-out forwards;
+}
+
+.experience__job_list {
+  @extend .section_wrapper;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.experience__job_item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: colors.$black-60;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fade-in-up 0.5s ease-in-out forwards;
+}
+
+.experience__job_title {
+  @extend .text__s_semi;
+  color: colors.$teal-50;
+}
+
+.experience__job_meta {
+  @extend .text;
+  color: colors.$black-40;
+  margin-bottom: 16px;
+}
+
+.experience__job_description {
+  @extend .text;
+  color: colors.$white;
+}

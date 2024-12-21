@@ -1,4 +1,6 @@
 @use "src/app/design-system/colors.scss" as colors;
+@use "src/app/design-system/layout.scss" as layout;
+@use "src/app/design-system/text.scss" as text;
 
 @keyframes fade-in-up {
   from {
@@ -21,21 +23,18 @@
 }
 
 .skills {
-  padding: 5rem 0;
-  background-color: colors.$black-80; // Background color
-  color: #fff;
+  padding: 40px 0;
+  background-color: colors.$black-60;
 }
 
 .skills__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  @extend .section_wrapper;
 }
 
 .skills__title {
-  font-size: 2rem;
-  font-weight: bold;
+  @extend .text__l_semi;
   text-align: center;
+  color: colors.$white;
   margin-bottom: 2rem;
   opacity: 0;
   transform: translateY(50px);
@@ -53,7 +52,7 @@
 }
 
 .skills__item {
-  background: #2d2d2d;
+  background: colors.$black-50;
   border-radius: 0.5rem;
   padding: 1rem;
   opacity: 0;
@@ -62,8 +61,8 @@
 }
 
 .skills__item__name {
-  font-size: 1.125rem; // 18px
-  font-weight: 600;
+  @extend .text__s_semi;
+  color: colors.$white;
   margin-bottom: 1rem;
 }
 
