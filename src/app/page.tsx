@@ -18,6 +18,7 @@ const Home = async () => {
       <About />
       <PolygonHr direction="bottomLeft" />
       <Skills />
+      <PolygonHr direction="topLeft" />
     </Main>
   );
 };
