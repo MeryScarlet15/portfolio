@@ -1,7 +1,38 @@
-@use 'src/app/design-system/colors' as colors;
-@use 'src/app/design-system/text';
-@use 'src/app/design-system/media' as media;
-@use 'src/app/design-system/layout';
+@use "src/app/design-system/colors" as colors;
+@use "src/app/design-system/text";
+@use "src/app/design-system/media" as media;
+@use "src/app/design-system/layout";
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 .hero__container {
   position: relative;
@@ -9,53 +40,29 @@
   overflow: hidden;
 
   @include media.tabletUp {
-    padding: 104px 0;
+    padding: 140px 0;
   }
 }
 
 .hero__background {
   position: absolute;
-  top: 0;
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: inherit;
-    background-size: inherit;
-    background-position: inherit;
-  }
-
-  &::before {
-    clip-path: inset(0 100% 0 0);
-    animation: revealHorizontal 2s ease-in-out forwards;
-  }
-
-  &::after {
-    clip-path: inset(100% 0 0 0);
-    animation: revealVertical 2s ease-in-out forwards;
-  }
+  inset: 0;
+  z-index: -1;
+  opacity: 0.5;
+  animation: fadeIn 2s forwards;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-@keyframes revealHorizontal {
-  0% {
-    clip-path: inset(0 100% 0 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes revealVertical {
-  0% {
-    clip-path: inset(100% 0 0 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
+.hero__background_gradient {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 70%,
+    colors.$black-100 100%
+  );
+  animation: fadeIn 2s forwards;
 }
 
 .hero {
@@ -79,21 +86,40 @@
 }
 
 .hero__title {
-  @extend .text__xxl_medium;
+  @extend .text__l_medium;
   color: colors.$white;
   display: flex;
+  text-align: center;
   flex-direction: column;
   gap: 8px;
+  animation: slideIn 0.8s forwards;
+
+  @include media.tabletUp {
+    text-align: left;
+    font-size: text.$size-xxl;
+  }
 }
 
 .hero__title_highlight {
-  @extend .text__l_semi;
+  @extend .text__m_semi;
+  text-align: center;
   color: colors.$teal-50;
+
+  @include media.tabletUp {
+    text-align: left;
+    font-size: text.$size-l;
+  }
 }
 
 .hero__button {
   &#{&} {
+    margin: 0 auto;
     width: fit-content;
+    animation: slideIn 0.8s forwards;
+
+    @include media.tabletUp {
+      margin: unset;
+    }
   }
 }
 
@@ -102,4 +128,5 @@
   height: 256px;
   border-radius: 50%;
   background: colors.$black-20;
+  animation: scaleIn 0.8s forwards;
 }

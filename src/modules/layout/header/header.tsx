@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          &lt;JS/&gt;
+          &lt;MA/&gt;
         </motion.div>
         <ul className={styles.header__ul}>
           {sections.map((item) => (
