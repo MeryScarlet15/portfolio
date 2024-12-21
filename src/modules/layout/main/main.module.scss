@@ -1,0 +1,16 @@
+@use 'src/app/design-system/media' as media;
+
+.main {
+  padding-top: 88px;
+  padding-bottom: 80px;
+
+  @include media.tabletUp {
+    padding-top: 104px;
+  }
+
+  @include media.maxLayoutUp {
+    padding: 0;
+    padding-top: 104px;
+    padding-bottom: 56px;
+  }
+}

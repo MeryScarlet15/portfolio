@@ -1,0 +1,105 @@
+@use 'src/app/design-system/colors' as colors;
+@use 'src/app/design-system/text';
+@use 'src/app/design-system/media' as media;
+@use 'src/app/design-system/layout';
+
+.hero__container {
+  position: relative;
+  padding: 88px 0;
+  overflow: hidden;
+
+  @include media.tabletUp {
+    padding: 104px 0;
+  }
+}
+
+.hero__background {
+  position: absolute;
+  top: 0;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+  }
+
+  &::before {
+    clip-path: inset(0 100% 0 0);
+    animation: revealHorizontal 2s ease-in-out forwards;
+  }
+
+  &::after {
+    clip-path: inset(100% 0 0 0);
+    animation: revealVertical 2s ease-in-out forwards;
+  }
+}
+
+@keyframes revealHorizontal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes revealVertical {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.hero {
+  @extend .section_wrapper;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  @include media.tabletUp {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+.hero__content {
+  max-width: 624px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.hero__title {
+  @extend .text__xxl_medium;
+  color: colors.$white;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero__title_highlight {
+  @extend .text__l_semi;
+  color: colors.$teal-50;
+}
+
+.hero__button {
+  &#{&} {
+    width: fit-content;
+  }
+}
+
+.hero__image {
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+  background: colors.$black-20;
+}

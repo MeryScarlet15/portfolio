@@ -1,0 +1,158 @@
+@use "src/app/design-system/media" as media;
+
+$weight-regular: 400;
+$weight-semi: 500;
+$weight-medium: 700;
+
+$size-small: 12px;
+$size-ps: 14px;
+$size-p: 16px;
+$size-xs: 18px;
+$size-s: 20px;
+$size-m: 24px;
+$size-l: 32px;
+$size-xl: 40px;
+$size-xxl: 64px;
+
+.text__small {
+  font-family: var(--font-geist-sans);
+  font-size: $size-small;
+  font-style: normal;
+  font-weight: $weight-regular;
+  line-height: 16px;
+}
+
+.text__ps {
+  font-family: var(--font-geist-sans);
+  font-size: $size-ps;
+  font-style: normal;
+  font-weight: $weight-regular;
+  line-height: normal;
+}
+
+.text__ps_medium {
+  @extend .text__ps;
+  font-weight: $weight-medium;
+}
+
+.text {
+  font-family: var(--font-geist-sans);
+  font-size: $size-p;
+  font-style: normal;
+  font-weight: $weight-regular;
+  line-height: normal;
+}
+
+.text_semi {
+  font-family: var(--font-geist-sans);
+  font-size: $size-p;
+  font-style: normal;
+  font-weight: $weight-semi;
+  line-height: normal;
+}
+
+.text_medium {
+  font-family: var(--font-geist-sans);
+  font-size: $size-p;
+  font-style: normal;
+  font-weight: $weight-medium;
+  line-height: normal;
+}
+
+.text__xs {
+  font-family: var(--font-geist-sans);
+  font-size: $size-xs;
+  font-style: normal;
+  font-weight: $weight-regular;
+  line-height: normal;
+}
+
+.text__xs_semi {
+  @extend .text__xs;
+  font-weight: $weight-semi;
+}
+
+.text__xs_medium {
+  @extend .text__xs;
+  font-weight: $weight-medium;
+}
+
+.text__s {
+  font-family: var(--font-geist-sans);
+  font-size: $size-s;
+  font-style: normal;
+  font-weight: $weight-regular;
+  line-height: normal;
+}
+
+.text__s_semi {
+  @extend .text__s;
+  font-weight: $weight-semi;
+}
+
+.text__s_medium {
+  @extend .text__s;
+  font-weight: $weight-medium;
+}
+
+.text__m {
+  font-family: var(--font-geist-sans);
+  font-size: $size-m;
+  font-style: normal;
+  font-weight: $weight-regular;
+  line-height: normal;
+}
+
+.text__m_semi {
+  @extend .text__m;
+  font-weight: $weight-semi;
+}
+
+.text__m_medium {
+  @extend .text__m;
+  font-weight: $weight-medium;
+}
+
+.text__l {
+  font-family: var(--font-geist-sans);
+  font-size: $size-l;
+  font-style: normal;
+  font-weight: $weight-regular;
+  line-height: normal;
+}
+
+.text__l_semi {
+  @extend .text__l;
+  font-weight: $weight-semi;
+}
+
+.text__l_medium {
+  @extend .text__l;
+  font-weight: $weight-medium;
+}
+
+.text__xl {
+  font-family: var(--font-geist-sans);
+  font-size: $size-xl;
+  font-style: normal;
+  font-weight: $weight-regular;
+  line-height: normal;
+}
+
+.text__xl_medium {
+  @extend .text__xl;
+  font-weight: $weight-medium;
+}
+
+.text__xxl {
+  font-family: var(--font-geist-sans);
+  font-size: $size-xxl;
+  font-style: normal;
+  font-weight: $weight-regular;
+  line-height: normal;
+}
+
+.text__xxl_medium {
+  @extend .text__xxl;
+  font-weight: $weight-medium;
+}

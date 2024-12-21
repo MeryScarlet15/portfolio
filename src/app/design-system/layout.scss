@@ -1,0 +1,22 @@
+@use "src/app/design-system/media" as media;
+@use "src/app/design-system/layout-variables" as layoutVariables;
+
+.section_wrapper {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 100vw;
+  overflow-x: hidden;
+
+  @include media.tabletUp {
+    padding: 0 24px;
+
+    max-width: layoutVariables.$maxWidth;
+    overflow-x: visible;
+  }
+
+  @include media.maxLayoutUp {
+    padding: 0;
+  }
+}

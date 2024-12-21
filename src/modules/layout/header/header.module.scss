@@ -1,0 +1,74 @@
+@use "src/app/design-system/z-index" as zIndex;
+@use "src/app/design-system/colors" as colors;
+@use "src/app/design-system/text" as text;
+@use "src/app/design-system/media" as media;
+@use "src/app/design-system/layout-variables" as layoutVariables;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgba(24, 24, 27, 0.8); /* Equivalent to bg-zinc-900/80 */
+  backdrop-filter: blur(10px);
+  z-index: zIndex.$l;
+}
+
+.header__nav {
+  max-width: layoutVariables.$maxWidth;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__title {
+  @extend .text__m_medium;
+  color: colors.$teal-50;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeIn 0.5s forwards;
+}
+
+.header__ul {
+  display: flex;
+  gap: 24px;
+}
+
+.header__li__button {
+  @extend .text__ps;
+  cursor: pointer;
+  color: colors.$black-40;
+  transition: color 0.3s;
+
+  &:hover {
+    @extend .text__ps_medium;
+    color: colors.$white;
+  }
+
+  &.active {
+    color: colors.$teal-50;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.header__li {
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

@@ -1,0 +1,37 @@
+@use 'src/app/design-system/layout-variables' as layout;
+
+@mixin desktopUp {
+  @media (min-width: 1330px) {
+    @content;
+  }
+}
+
+@mixin maxLayoutUp {
+  @media (min-width: layout.$maxWidth) {
+    @content;
+  }
+}
+
+@mixin laptopUp {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin bigTabletUp {
+  @media (min-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin tabletUp {
+  @media (min-width: 923px) {
+    @content;
+  }
+}
+
+@mixin phoneUp {
+  @media (min-width: 577px) {
+    @content;
+  }
+}
