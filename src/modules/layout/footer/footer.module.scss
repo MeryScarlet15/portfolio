@@ -1,0 +1,54 @@
+@use "src/app/design-system/colors.scss" as colors;
+@use "src/app/design-system/layout.scss" as layout;
+@use "src/app/design-system/text.scss" as text;
+
+.footer {
+  background-color: colors.$black-80;
+  padding: 24px 0;
+}
+
+.footer__container {
+  @extend .section_wrapper;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.footer__text {
+  @extend .text__ps;
+  color: colors.$black-10;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
+}
+
+.footer__icons {
+  display: flex;
+  gap: 16px;
+}
+
+.footer__icon {
+  color: colors.$black-10;
+  font-size: 1.25rem; // 20px
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    color: colors.$white;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

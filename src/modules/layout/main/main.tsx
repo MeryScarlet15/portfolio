@@ -4,6 +4,7 @@ import { UIContextProvider } from "@/context/ui-context";
 
 import styles from "./main.module.scss";
 import { Header } from "../header/header";
+import { Footer } from "../footer/footer";
 
 interface Props {
   children: React.ReactNode;
@@ -21,7 +22,7 @@ export default function Main({
       {/* TODO - Add aside */}
 
       <main className={`${styles.main}  ${className}`}>{children}</main>
-      {/* TODO - Add footer */}
+      <Footer />
     </UIContextProvider>
   );
 }
