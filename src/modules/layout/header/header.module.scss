@@ -10,7 +10,9 @@
   left: 0;
   right: 0;
   z-index: 50;
-  background-color: rgba(24, 24, 27, 0.8); /* Equivalent to bg-zinc-900/80 */
+  background-color: rgba(24, 24, 24, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   z-index: zIndex.$l;
   display: flex;
