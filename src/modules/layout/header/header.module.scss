@@ -49,8 +49,12 @@
 }
 
 .header__ul {
-  display: flex;
-  gap: 24px;
+  display: none;
+
+  @include media.tabletUp {
+    display: flex;
+    gap: 24px;
+  }
 }
 
 .header__li__button {
