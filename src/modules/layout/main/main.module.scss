@@ -1,6 +1,7 @@
 @use "src/app/design-system/media" as media;
 
 .main {
+  min-height: 100vh;
   padding-top: 88px;
 
   @include media.tabletUp {
