@@ -1,17 +1,6 @@
 @use "src/app/design-system/colors.scss" as colors;
 @use "src/app/design-system/text.scss" as text;
 
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .job {
   display: flex;
   flex-direction: column;
@@ -20,9 +9,14 @@
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: translateY(50px);
-  animation: fade-in-up 0.5s ease-in-out forwards;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease; /* Add smooth transition */
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .job__title {
@@ -41,7 +35,8 @@
   color: colors.$white;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
+  line-height: 1.5;
 
   ul {
     list-style-type: disc;

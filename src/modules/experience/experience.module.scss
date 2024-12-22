@@ -41,3 +41,8 @@
   flex-direction: column;
   gap: 24px;
 }
+
+.experience__job_element {
+  opacity: 0;
+  animation: fade-in-up 0.5s ease-in-out forwards;
+}

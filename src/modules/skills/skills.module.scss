@@ -50,3 +50,8 @@
     gap: 24px;
   }
 }
+
+.skills__grid_element {
+  opacity: 0;
+  animation: fade-in-up 0.5s ease-in-out forwards;
+}

@@ -22,11 +22,17 @@ export const Skills: React.FC = () => {
     <section className={styles.skills}>
       <div className={styles.skills__container}>
         <h2 className={styles.skills__title}>Main Technologies</h2>
-        <div className={styles.skills__grid}>
+        <ul className={styles.skills__grid}>
           {skills.map((skill, index) => (
-            <Skill skill={skill} animationDelay={index * 0.1} />
+            <li
+              className={styles.skills__grid_element}
+              key={index}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <Skill skill={skill} />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
