@@ -3,21 +3,25 @@ import styles from "./skills.module.scss";
 import { Skill } from "./components/skill/skill";
 
 const skills = [
-  { name: "JavaScript", level: 90 },
-  { name: "React", level: 85 },
-  { name: "Node.js", level: 80 },
-  { name: "Python", level: 75 },
-  { name: "SQL", level: 70 },
-  { name: "MongoDB", level: 65 },
-  { name: "GraphQL", level: 60 },
-  { name: "Docker", level: 55 },
+  { name: "Nextjs", level: 100 },
+  { name: "Nodejs", level: 100 },
+  { name: "Nestjs", level: 100 },
+  { name: "SEO", level: 100 },
+  { name: "Typescript", level: 100 },
+  { name: "GraphQL", level: 100 },
+  { name: "React", level: 100 },
+  { name: "Postgres", level: 100 },
+  { name: "Cursor", level: 100 },
+  { name: "OpenAI", level: 90 },
+  { name: "Python", level: 80 },
+  { name: "AWS", level: 80 },
 ];
 
 export const Skills: React.FC = () => {
   return (
     <section className={styles.skills}>
       <div className={styles.skills__container}>
-        <h2 className={styles.skills__title}>Main Skills</h2>
+        <h2 className={styles.skills__title}>Main Technologies</h2>
         <div className={styles.skills__grid}>
           {skills.map((skill, index) => (
             <Skill skill={skill} animationDelay={index * 0.1} />

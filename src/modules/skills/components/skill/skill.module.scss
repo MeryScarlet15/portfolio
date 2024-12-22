@@ -15,14 +15,14 @@
 .skill {
   background: colors.$black-50;
   border-radius: 8px;
-  padding: 16px;
+  padding: 12px;
   opacity: 0;
   transform: translateY(50px);
   animation: fade-in-up 0.5s ease-in-out forwards;
 }
 
 .skill__name {
-  @extend .text__s_semi;
+  @extend .text__xs_semi;
   color: colors.$white;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }

@@ -31,18 +31,22 @@
   @extend .text__l_semi;
   text-align: center;
   color: colors.$white;
-  margin-bottom: 2rem;
+  margin-bottom: 24px;
   opacity: 0;
   transform: translateY(50px);
   animation: fade-in-up 0.5s ease-in-out forwards;
+
+  @include media.tabletUp {
+    margin-bottom: 32px;
+  }
 }
 
 .skills__grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }

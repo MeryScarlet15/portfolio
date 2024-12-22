@@ -1,18 +1,24 @@
 @use "@/app/design-system/colors.scss" as colors;
 @use "@/app/design-system/z-index.scss" as zIndex;
+@use "@/app/design-system/media.scss" as media;
 
 .cursor {
-  position: fixed;
-  width: 24px;
-  height: 24px;
-  border: 2px solid colors.$teal-50;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: zIndex.$xxl;
-  mix-blend-mode: difference;
-  transition:
-    width 0.3s ease,
-    height 0.3s ease;
+  display: none;
+
+  @include media.tabletUp {
+    display: block;
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    border: 2px solid colors.$teal-50;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: zIndex.$xxl;
+    mix-blend-mode: difference;
+    transition:
+      width 0.3s ease,
+      height 0.3s ease;
+  }
 }
 
 .cursor_expanded {

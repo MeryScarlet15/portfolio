@@ -2,24 +2,26 @@
 
 @keyframes fill-bar {
   from {
-    width: 0;
+    transform: scaleX(0);
   }
   to {
-    width: 100%;
+    transform: scaleX(1);
   }
 }
 
 .progress_bar {
-  height: 12px;
-  background: colors.$black-50;
-  border-radius: 12px;
+  width: 100%;
+  height: 10px;
+  background: colors.$black-40;
+  border-radius: 10px;
   overflow: hidden;
 }
 
 .progress_bar__progress {
   height: 100%;
   background: colors.$teal-50;
-  border-radius: 12px;
+  border-radius: 10px;
   width: 0;
+  transform-origin: left;
   animation: fill-bar 1s ease-out forwards;
 }
