@@ -32,9 +32,12 @@ export const Hero: React.FC = () => {
             width={450}
             className={styles.hero__image}
             src={heroImage}
+            quality={100}
             alt="María Amado - Full Stack Developer"
             priority
-            sizes="(max-width: 768px) 256px, 300px"
+            sizes="(max-width: 480px) 256px,
+                   (max-width: 768px) 300px,
+                   450px"
             style={{
               objectFit: "cover",
             }}
