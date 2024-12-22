@@ -182,12 +182,21 @@
 }
 
 .hero__image_container {
-  width: 450px;
+  position: relative;
+  width: 280px;
+  height: auto;
   animation: rockImage 0.8s linear;
   filter: grayscale(30%);
   transform: rotate(-2deg);
+
+  @include media.tabletUp {
+    width: 450px;
+  }
 }
 
 .hero__image {
-  width: 450px;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }

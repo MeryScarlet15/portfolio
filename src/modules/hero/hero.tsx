@@ -48,18 +48,15 @@ export const Hero: React.FC = () => {
         </div>
         <div className={styles.hero__image_container}>
           <Image
-            width={450}
             className={styles.hero__image}
             src={heroImage}
             quality={100}
             alt="María Amado - Full Stack Developer"
             priority
-            sizes="(max-width: 480px) 256px,
-                   (max-width: 768px) 300px,
-                   450px"
-            style={{
-              objectFit: 'cover'
-            }}
+            width={450}
+            sizes="(max-width: 480px) 250px,
+           (max-width: 768px) 300px,
+           450px"
           />
         </div>
       </article>
