@@ -3,6 +3,8 @@ import styles from './hero.module.scss'
 import { Button } from '../../components/button/button'
 import Image from 'next/image'
 import heroImage from 'public/images/hero.png'
+import { Link } from '@/components/link/link'
+import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
 
 export const Hero: React.FC = () => {
   return (
@@ -19,14 +21,29 @@ export const Hero: React.FC = () => {
               A Javascript Fullstack Developer
             </span>
           </h1>
-          <div className={styles.hero__button}>
-            <Button
-              text="Get in touch"
-              role="link"
-              href="mailto:maria_amado15@hotmail.com"
-              ariaLabel="Get in touch"
-              className={styles.hero__button}
-            />
+
+          <div className={styles.hero__cta_container}>
+            <div className={styles.hero__social}>
+              <Link
+                href="https://github.com/MeryScarlet15"
+                className={styles.hero__social_icon}>
+                <IoLogoGithub size={24} />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/maria-amado-854b6116a"
+                className={styles.hero__social_icon}>
+                <IoLogoLinkedin size={24} />
+              </Link>
+            </div>
+            <div className={styles.hero__button}>
+              <Button
+                text="Get in touch"
+                role="link"
+                href="mailto:maria_amado15@hotmail.com"
+                ariaLabel="Get in touch"
+                className={styles.hero__button}
+              />
+            </div>
           </div>
         </div>
         <div className={styles.hero__image_container}>
