@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./Hero.module.scss";
 import { Button } from "../../components/button/button";
+import Image from "next/image";
+import heroImage from "public/images/hero.png";
 
-export default function Hero(): React.ReactElement {
+export const Hero: React.FC = () => {
   return (
     <section className={styles.hero__container}>
       <div className={styles.hero__background}></div>
@@ -25,8 +27,20 @@ export default function Hero(): React.ReactElement {
             />
           </div>
         </div>
-        <div className={styles.hero__image}>{/* TODO - IMAGE */}</div>
+        <div className={styles.hero__image_container}>
+          <Image
+            width={450}
+            className={styles.hero__image}
+            src={heroImage}
+            alt="María Amado - Full Stack Developer"
+            priority
+            sizes="(max-width: 768px) 256px, 300px"
+            style={{
+              objectFit: "cover",
+            }}
+          />
+        </div>
       </article>
     </section>
   );
-}
+};

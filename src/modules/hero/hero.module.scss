@@ -12,6 +12,18 @@
   }
 }
 
+@keyframes rockImage {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -123,10 +135,13 @@
   }
 }
 
+.hero__image_container {
+  width: 450px;
+  animation: rockImage 0.8s linear;
+  filter: grayscale(30%);
+  transform: rotate(-2deg);
+}
+
 .hero__image {
-  width: 256px;
-  height: 256px;
-  border-radius: 50%;
-  background: colors.$black-20;
-  animation: scaleIn 0.8s forwards;
+  width: 450px;
 }
