@@ -16,8 +16,7 @@ export const About: React.FC = () => {
             height={400}
             className={styles.about__image}
             loading="lazy"
-            placeholder="blur"
-            quality={75}
+            placeholder="empty"
             sizes="(max-width: 768px) 90vw, (max-width: 1200px) 400px, 400px"
             style={{
               objectFit: 'cover',

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build:app": "next build",
     "start": "next start",
     "lint": "next lint --max-warnings=0 && pnpm prettier:check",
     "prettier:check": "prettier --check \"{src,scripts}/**/*.{ts,js,tsx}\"",
@@ -17,7 +17,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.4.0",
-    "sass": "^1.80.3"
+    "sass": "^1.80.3",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@types/node": "^20",
