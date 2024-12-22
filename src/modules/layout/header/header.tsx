@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './header.module.scss'
 import Link from 'next/link'
 
-const sections = ['Home', 'About', 'Skills', 'Experience', 'Contact']
+const sections = ['About', 'Skills', 'Experience']
 
 export const Header: React.FC = () => {
   return (

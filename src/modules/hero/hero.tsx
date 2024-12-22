@@ -22,6 +22,8 @@ export const Hero: React.FC = () => {
           <div className={styles.hero__button}>
             <Button
               text="Get in touch"
+              role="link"
+              href="mailto:maria_amado15@hotmail.com"
               ariaLabel="Get in touch"
               className={styles.hero__button}
             />
