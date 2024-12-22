@@ -5,7 +5,7 @@ import styles from "./cursor.module.scss";
 import { motion } from "framer-motion";
 
 const matchHoverableElements = (target: HTMLElement) => {
-  return target.matches("a, button, p, h1, h2, h3, h4, h5, h6, span");
+  return target.matches("a, button, p, h3, h4, h5, h6, span");
 };
 
 export const Cursor: React.FC = () => {
