@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./Hero.module.scss";
-import { Button } from "../../components/button/button";
-import Image from "next/image";
-import heroImage from "public/images/hero.png";
+import React from 'react'
+import styles from './Hero.module.scss'
+import { Button } from '../../components/button/button'
+import Image from 'next/image'
+import heroImage from 'public/images/hero.png'
 
 export const Hero: React.FC = () => {
   return (
@@ -39,11 +39,11 @@ export const Hero: React.FC = () => {
                    (max-width: 768px) 300px,
                    450px"
             style={{
-              objectFit: "cover",
+              objectFit: 'cover'
             }}
           />
         </div>
       </article>
     </section>
-  );
-};
+  )
+}

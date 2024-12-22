@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./header.module.scss";
-import Link from "next/link";
+import React from 'react'
+import styles from './header.module.scss'
+import Link from 'next/link'
 
-const sections = ["Home", "About", "Skills", "Experience", "Contact"];
+const sections = ['Home', 'About', 'Skills', 'Experience', 'Contact']
 
 export const Header: React.FC = () => {
   return (
@@ -14,8 +14,7 @@ export const Header: React.FC = () => {
             <li key={item} className={styles.header__li}>
               <Link
                 href={`#${item.toLowerCase()}`}
-                className={styles.header__li__button}
-              >
+                className={styles.header__li__button}>
                 {item}
               </Link>
             </li>
@@ -23,5 +22,5 @@ export const Header: React.FC = () => {
         </ul>
       </nav>
     </header>
-  );
-};
+  )
+}

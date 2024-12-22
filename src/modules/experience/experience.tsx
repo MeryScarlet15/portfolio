@@ -1,13 +1,13 @@
-import React from "react";
-import styles from "./experience.module.scss";
-import { Job } from "./components/job/job";
+import React from 'react'
+import styles from './experience.module.scss'
+import { Job } from './components/job/job'
 
 const jobs = [
   {
-    title: "Software Developer",
-    company: "Thingtesting",
+    title: 'Software Developer',
+    company: 'Thingtesting',
     isStartup: true,
-    period: "12/2022 - 01/2025 (2 years 1 month)",
+    period: '12/2022 - 01/2025 (2 years 1 month)',
     description: (
       <>
         <p>
@@ -36,13 +36,13 @@ const jobs = [
           website performance.
         </p>
       </>
-    ),
+    )
   },
   {
-    title: "Frontend developer (Freelance)",
-    company: "Fence",
+    title: 'Frontend developer (Freelance)',
+    company: 'Fence',
     isStartup: true,
-    period: "10/2023 - 06/2024 (8 months)",
+    period: '10/2023 - 06/2024 (8 months)',
     description: (
       <>
         <p>
@@ -57,13 +57,13 @@ const jobs = [
           by incorporating advanced caching strategies, to improve load times.
         </p>
       </>
-    ),
+    )
   },
   {
-    title: "Full-stack Developer",
-    company: "Revel",
+    title: 'Full-stack Developer',
+    company: 'Revel',
     isStartup: true,
-    period: "12/2019 - 12/2022 (3 years 1 month)",
+    period: '12/2019 - 12/2022 (3 years 1 month)',
     description: (
       <>
         <p>
@@ -101,13 +101,13 @@ const jobs = [
           with Python.
         </p>
       </>
-    ),
+    )
   },
   {
-    title: "Frontend developer (Freelance)",
-    company: "Dime",
+    title: 'Frontend developer (Freelance)',
+    company: 'Dime',
     isStartup: true,
-    period: "07/2020 - 08/2022 (2 years 2 months)",
+    period: '07/2020 - 08/2022 (2 years 2 months)',
     description: (
       <>
         <p>
@@ -119,13 +119,13 @@ const jobs = [
           and Styled-components.
         </p>
       </>
-    ),
+    )
   },
   {
-    title: "Front End Developer",
-    company: "Aluxion Labs",
+    title: 'Front End Developer',
+    company: 'Aluxion Labs',
     isStartup: false,
-    period: "01/2019 - 12/2019 (12 months)",
+    period: '01/2019 - 12/2019 (12 months)',
     description: (
       <>
         <p>
@@ -142,13 +142,13 @@ const jobs = [
           <li>Git & Storybook</li>
         </ul>
       </>
-    ),
+    )
   },
   {
-    title: "Intern",
-    company: "Cibernos",
+    title: 'Intern',
+    company: 'Cibernos',
     isStartup: false,
-    period: "10/2018 - 01/2019 (4 months)",
+    period: '10/2018 - 01/2019 (4 months)',
     description: (
       <>
         <p>
@@ -156,9 +156,9 @@ const jobs = [
           with the tool PLAN using SQL
         </p>
       </>
-    ),
-  },
-];
+    )
+  }
+]
 
 export const Experience: React.FC = () => {
   return (
@@ -169,12 +169,11 @@ export const Experience: React.FC = () => {
           <li
             className={styles.experience__job_element}
             key={index}
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
+            style={{ animationDelay: `${index * 0.1}s` }}>
             <Job job={job} />
           </li>
         ))}
       </ul>
     </section>
-  );
-};
+  )
+}

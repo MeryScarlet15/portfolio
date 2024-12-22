@@ -1,21 +1,21 @@
-import React from "react";
-import styles from "./skills.module.scss";
-import { Skill } from "./components/skill/skill";
+import React from 'react'
+import styles from './skills.module.scss'
+import { Skill } from './components/skill/skill'
 
 const skills = [
-  { name: "Nextjs", level: 100 },
-  { name: "Nodejs", level: 100 },
-  { name: "Nestjs", level: 100 },
-  { name: "SEO", level: 100 },
-  { name: "Typescript", level: 100 },
-  { name: "GraphQL", level: 100 },
-  { name: "React", level: 100 },
-  { name: "Postgres", level: 100 },
-  { name: "Cursor", level: 100 },
-  { name: "OpenAI", level: 90 },
-  { name: "Python", level: 80 },
-  { name: "AWS", level: 80 },
-];
+  { name: 'Nextjs', level: 100 },
+  { name: 'Nodejs', level: 100 },
+  { name: 'Nestjs', level: 100 },
+  { name: 'SEO', level: 100 },
+  { name: 'Typescript', level: 100 },
+  { name: 'GraphQL', level: 100 },
+  { name: 'React', level: 100 },
+  { name: 'Postgres', level: 100 },
+  { name: 'Cursor', level: 100 },
+  { name: 'OpenAI', level: 90 },
+  { name: 'Python', level: 80 },
+  { name: 'AWS', level: 80 }
+]
 
 export const Skills: React.FC = () => {
   return (
@@ -27,13 +27,12 @@ export const Skills: React.FC = () => {
             <li
               className={styles.skills__grid_element}
               key={index}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+              style={{ animationDelay: `${index * 0.1}s` }}>
               <Skill skill={skill} />
             </li>
           ))}
         </ul>
       </div>
     </section>
-  );
-};
+  )
+}

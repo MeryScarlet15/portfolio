@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./about.module.scss";
-import Image from "next/image";
-import aboutImage from "public/images/about.jpg";
+import React from 'react'
+import styles from './about.module.scss'
+import Image from 'next/image'
+import aboutImage from 'public/images/about.jpg'
 
 export const About: React.FC = () => {
   return (
@@ -20,11 +20,11 @@ export const About: React.FC = () => {
             quality={75}
             sizes="(max-width: 768px) 90vw, (max-width: 1200px) 400px, 400px"
             style={{
-              objectFit: "cover",
-              borderRadius: "8px",
-              filter: "grayscale(30%)",
-              maxWidth: "100%",
-              height: "auto",
+              objectFit: 'cover',
+              borderRadius: '8px',
+              filter: 'grayscale(30%)',
+              maxWidth: '100%',
+              height: 'auto'
             }}
           />
         </div>
@@ -52,5 +52,5 @@ export const About: React.FC = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

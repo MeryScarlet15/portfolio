@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --max-warnings=0 && pnpm prettier:check",
+    "prettier:check": "prettier --check \"{src,scripts}/**/*.{ts,js,tsx}\"",
+    "prettier": "prettier --write \"{src,scripts}/**/*.{ts,js,tsx}\""
   },
   "dependencies": {
     "framer-motion": "^11.15.0",
@@ -23,6 +25,8 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "prettier": "^3.3.3",
     "typescript": "^5"
   }

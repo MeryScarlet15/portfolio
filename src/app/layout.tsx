@@ -1,27 +1,26 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import Head from "next/head";
-import "./design-system/reset.scss";
-import "./design-system/colors.scss";
-import { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { Header } from "../modules/layout/header/header";
+import Head from 'next/head'
+import './design-system/reset.scss'
+import './design-system/colors.scss'
+import { Metadata } from 'next'
+import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
 
 export const metadata: Metadata = {
-  title: "Maria Amado | Full Stack Developer",
+  title: 'Maria Amado | Full Stack Developer',
   openGraph: {
-    title: "Maria Amado | Full Stack Developer",
-    description: "Full Stack Developer portfolio",
+    title: 'Maria Amado | Full Stack Developer',
+    description: 'Full Stack Developer portfolio',
     // TODO: Add url
-    url: "",
-    type: "website",
-  },
-};
+    url: '',
+    type: 'website'
+  }
+}
 
 export default function RootLayout({
-  children,
+  children
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en" className={`${GeistSans.className} ${GeistMono.className}`}>
@@ -49,7 +48,7 @@ export default function RootLayout({
         <meta name="robots" content="noindex" />
         <meta
           name="environment"
-          content={process.env.ENVIRONMENT ? "production" : "development"}
+          content={process.env.ENVIRONMENT ? 'production' : 'development'}
         />
         <meta name="application-name" content="Maria Amado Portfolio" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -70,5 +69,5 @@ export default function RootLayout({
       </Head>
       <body>{children}</body>
     </html>
-  );
+  )
 }

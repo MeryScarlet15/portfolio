@@ -1,44 +1,43 @@
-"use client";
+'use client'
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
 type TUIContext = {
-  asideOpen: boolean;
-  setAsideOpen: (open: boolean) => void;
-};
+  asideOpen: boolean
+  setAsideOpen: (open: boolean) => void
+}
 
 export const UIContext = createContext<TUIContext>({
   asideOpen: false,
-  setAsideOpen: () => {},
-});
+  setAsideOpen: () => {}
+})
 
 interface Props {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 export const UIContextProvider: React.FC<Props> = ({ children }: Props) => {
-  const [asideOpen, setAsideOpen] = useState<boolean>(false);
+  const [asideOpen, setAsideOpen] = useState<boolean>(false)
 
   useEffect(() => {
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual'
     }
 
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <UIContext.Provider
       value={{
         asideOpen,
-        setAsideOpen,
-      }}
-    >
+        setAsideOpen
+      }}>
       {children}
     </UIContext.Provider>
-  );
-};
+  )
+}
 
 export const useUiContext = (): TUIContext => {
-  return useContext(UIContext);
-};
+  return useContext(UIContext)
+}
