@@ -30,33 +30,19 @@ export default function RootLayout({
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/meta/favicon-32x32.png"
+          href="/public/favicon/favicon-32x32.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/meta/favicon-16x16.png"
-        />
-
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="48x48"
-          href="/meta/favicon-48x48.png"
-        />
-
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="96x96"
-          href="/meta/favicon-96x96.png"
+          href="/public/favicon/favicon-16x16.png"
         />
 
         <link
           rel="apple-touch-icon"
           sizes="60x60"
-          href="/meta/favicon-60x60.png"
+          href="/public/favicon/apple-touch-icon.png"
         />
       </head>
       <Head>
