@@ -5,8 +5,9 @@ type Props = {
   job: {
     title: string;
     company: string;
+    isStartup: boolean;
     period: string;
-    description: string;
+    description: React.ReactNode;
   };
   animationDelay?: number;
 };
@@ -21,9 +22,11 @@ export const Job = ({ job, animationDelay }: Props) => {
         animationDelay: `${animationDelay || DEFAULT_ANIMATION_DELAY}s`,
       }}
     >
-      <h3 className={styles.job__title}>{job.title}</h3>
+      <h3 className={styles.job__title}>
+        {job.title} at {job.company}
+      </h3>
       <p className={styles.job__meta}>
-        {job.company} | {job.period}
+        {job.isStartup && "Early-stage Start-up |"} {job.period}
       </p>
       <p className={styles.job__description}>{job.description}</p>
     </div>

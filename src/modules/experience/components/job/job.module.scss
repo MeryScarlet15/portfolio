@@ -39,4 +39,15 @@
 .job__description {
   @extend .text;
   color: colors.$white;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  ul {
+    list-style-type: disc;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
 }
