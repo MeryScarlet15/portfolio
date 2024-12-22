@@ -5,7 +5,7 @@ import aboutImage from "public/images/about.jpg";
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className={styles.about}>
+    <section className={styles.about}>
       <h2 className={styles.about__title}>About Me</h2>
       <div className={styles.about__content}>
         <div className={styles.about__image_container}>

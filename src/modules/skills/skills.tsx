@@ -15,7 +15,7 @@ const skills = [
 
 export const Skills: React.FC = () => {
   return (
-    <section id="skills" className={styles.skills}>
+    <section className={styles.skills}>
       <div className={styles.skills__container}>
         <h2 className={styles.skills__title}>Main Skills</h2>
         <div className={styles.skills__grid}>

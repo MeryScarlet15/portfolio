@@ -27,7 +27,7 @@ const jobs = [
 
 export const Experience: React.FC = () => {
   return (
-    <section id="experience" className={styles.experience}>
+    <section className={styles.experience}>
       <h2 className={styles.experience__title}>Experience</h2>
       <div className={styles.experience__job_list}>
         {jobs.map((job, index) => (
