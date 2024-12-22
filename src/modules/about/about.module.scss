@@ -107,9 +107,12 @@
 
 .about__text {
   padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 
   p {
-    @extend .text__s;
+    @extend .text;
     line-height: 1.6;
     color: #ccc;
   }

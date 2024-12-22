@@ -30,10 +30,24 @@ export const About: React.FC = () => {
         </div>
         <div className={styles.about__text}>
           <p>
-            I'm a passionate fullstack developer with a love for creating
-            efficient, scalable, and user-friendly web applications. With
-            expertise in both frontend and backend technologies, I bring ideas
-            to life through clean code and innovative solutions.
+            I’m Maria Amado, a Full Stack Developer with over 6 years of
+            experience, based in Spain. I have expertise in Next.js, Nest.js,
+            Node.js, React, Typescript, and SEO, among other technologies.
+          </p>
+          <p>
+            I give great importance to SEO, user experience, performance, and
+            clean code. I believe that a well-optimized, user-friendly
+            application with clean and efficient code is the key to delivering
+            great products
+          </p>
+          <p>
+            When I’m not coding, I enjoy exploring new technologies, traveling,
+            and working out.
+          </p>
+
+          <p>
+            I'm open to new opportunities, particularly remote roles in Europe
+            or the US.
           </p>
         </div>
       </div>
