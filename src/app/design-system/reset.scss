@@ -87,8 +87,19 @@ video {
   font: inherit;
   vertical-align: baseline;
   box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
 }
+
+/* Only apply smooth scrolling if user hasn't requested reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -118,7 +129,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
