@@ -27,7 +27,18 @@
 .job__meta {
   @extend .text;
   color: #aaa;
+}
+
+.job__link {
+  color: colors.$teal-50;
+  text-decoration: underline;
+  margin-top: 8px;
+  transition: color 0.3s;
   margin-bottom: 16px;
+
+  &:hover {
+    color: colors.$white;
+  }
 }
 
 .job__description_wrapper {

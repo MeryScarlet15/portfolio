@@ -6,6 +6,7 @@ const jobs = [
   {
     title: 'Software Developer',
     company: 'Thingtesting',
+    link: 'https://thingtesting.com/',
     isStartup: true,
     period: '12/2022 - 01/2025 (2 years 1 month)',
     description: (
@@ -41,6 +42,7 @@ const jobs = [
   {
     title: 'Frontend developer (Freelance)',
     company: 'Fence',
+    link: 'https://fence.finance/',
     isStartup: true,
     period: '10/2023 - 06/2024 (8 months)',
     description: (
@@ -62,6 +64,7 @@ const jobs = [
   {
     title: 'Full-stack Developer',
     company: 'Revel',
+    link: 'https://driverevel.com/',
     isStartup: true,
     period: '12/2019 - 12/2022 (3 years 1 month)',
     description: (
@@ -106,6 +109,7 @@ const jobs = [
   {
     title: 'Frontend developer (Freelance)',
     company: 'Dime',
+    link: 'https://www.ridedime.app',
     isStartup: true,
     period: '07/2020 - 08/2022 (2 years 2 months)',
     description: (
