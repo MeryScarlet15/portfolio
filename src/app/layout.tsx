@@ -45,7 +45,6 @@ export default function RootLayout({
         />
       </head>
       <Head>
-        <meta name="robots" content="noindex" />
         <meta
           name="environment"
           content={process.env.ENVIRONMENT ? 'production' : 'development'}
