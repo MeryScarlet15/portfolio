@@ -1,5 +1,5 @@
-@use "src/app/design-system/colors.scss" as colors;
-@use "src/app/design-system/text.scss" as text;
+@use 'src/app/design-system/colors.scss' as colors;
+@use 'src/app/design-system/text.scss' as text;
 
 .job {
   display: flex;
@@ -30,6 +30,17 @@
   margin-bottom: 16px;
 }
 
+.job__description_wrapper {
+  position: relative;
+  max-height: 150px;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.expanded {
+    max-height: 2000px;
+  }
+}
+
 .job__description {
   @extend .text;
   color: colors.$white;
@@ -44,5 +55,40 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+  }
+}
+
+.job__fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, colors.$black-60);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+.job__expand_button {
+  @extend .text__ps;
+  background: none;
+  border: none;
+  color: colors.$teal-50;
+  cursor: pointer;
+  padding: 8px;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: colors.$white;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 }

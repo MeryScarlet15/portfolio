@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import styles from './job.module.scss'
 
 type Props = {
@@ -12,6 +14,8 @@ type Props = {
 }
 
 export const Job = ({ job }: Props) => {
+  const [isExpanded, setIsExpanded] = useState(false)
+
   return (
     <article className={styles.job}>
       <h3 className={styles.job__title}>
@@ -20,7 +24,19 @@ export const Job = ({ job }: Props) => {
       <p className={styles.job__meta}>
         {job.isStartup && 'Early-stage Start-up |'} {job.period}
       </p>
-      <p className={styles.job__description}>{job.description}</p>
+      <div
+        className={`${styles.job__description_wrapper} ${isExpanded ? styles.expanded : ''}`}>
+        <div className={styles.job__description}>{job.description}</div>
+        <div
+          className={`${styles.job__fade} ${isExpanded ? styles.hidden : ''}`}
+        />
+      </div>
+      <button
+        className={styles.job__expand_button}
+        onClick={() => setIsExpanded(!isExpanded)}
+        aria-expanded={isExpanded}>
+        {isExpanded ? 'Show Less' : 'Show More'}
+      </button>
     </article>
   )
 }
