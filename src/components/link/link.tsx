@@ -2,10 +2,11 @@ import React from 'react'
 import NextLink, { LinkProps } from 'next/link'
 
 export interface MainLinkProps extends LinkProps {
-  className?: string
-  children?: React.ReactNode
-  target?: React.HTMLAttributeAnchorTarget
-  underlined?: boolean
+  'className'?: string
+  'children'?: React.ReactNode
+  'target'?: React.HTMLAttributeAnchorTarget
+  'underlined'?: boolean
+  'aria-label'?: string
 }
 
 export const Link: React.FC<MainLinkProps> = (props: MainLinkProps) => {

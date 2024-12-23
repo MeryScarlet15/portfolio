@@ -26,12 +26,14 @@ export const Hero: React.FC = () => {
             <div className={styles.hero__social}>
               <Link
                 href="https://github.com/MeryScarlet15"
-                className={styles.hero__social_icon}>
+                className={styles.hero__social_icon}
+                aria-label="Github">
                 <IoLogoGithub size={24} />
               </Link>
               <Link
                 href="https://www.linkedin.com/in/maria-amado-854b6116a"
-                className={styles.hero__social_icon}>
+                className={styles.hero__social_icon}
+                aria-label="LinkedIn">
                 <IoLogoLinkedin size={24} />
               </Link>
             </div>

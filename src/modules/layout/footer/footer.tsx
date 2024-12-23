@@ -14,17 +14,20 @@ export const Footer: React.FC = () => {
           <div className={styles.footer__icons}>
             <Link
               href="https://github.com/MeryScarlet15"
-              className={styles.footer__icon}>
+              className={styles.footer__icon}
+              aria-label="Github">
               <IoLogoGithub size={20} />
             </Link>
             <Link
               href="https://www.linkedin.com/in/maria-amado-854b6116a"
-              className={styles.footer__icon}>
+              className={styles.footer__icon}
+              aria-label="LinkedIn">
               <IoLogoLinkedin size={20} />
             </Link>
             <Link
               href="mailto:maria_amado15@hotmail.com"
-              className={styles.footer__icon}>
+              className={styles.footer__icon}
+              aria-label="Email">
               <IoMail size={20} />
             </Link>
           </div>
