@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './hero.module.scss'
-import { Button } from '../../components/button/button'
+import { Button } from '@/components/button/button'
 import Image from 'next/image'
 import heroImage from 'public/images/hero.png'
 import { Link } from '@/components/link/link'

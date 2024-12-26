@@ -2,7 +2,7 @@
 
 import React from 'react'
 import styles from './button.module.scss'
-import { Link } from '../link/link'
+import { Link } from '@/components/link/link'
 
 interface Props {
   text: string

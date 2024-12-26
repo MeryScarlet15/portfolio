@@ -1,5 +1,6 @@
 import styles from './polygon-hr.module.scss'
 import React from 'react'
+
 const clipPaths = {
   topRight: 'polygon(0 0, 100% 0, 100% 100%, 0 80%)',
   bottomLeft: 'polygon(0 20%, 100% 0, 100% 100%, 0 100%)',

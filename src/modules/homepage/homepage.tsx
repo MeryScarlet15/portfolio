@@ -2,7 +2,7 @@
 
 import React, { Suspense } from 'react'
 import { PolygonHr } from '@/components/hr/polygon-hr/polygon-hr'
-import { Hero } from '../hero/hero'
+import { Hero } from '@/modules/hero/hero'
 import dynamic from 'next/dynamic'
 import { useInView } from 'react-intersection-observer'
 import styles from './homepage.module.scss'
