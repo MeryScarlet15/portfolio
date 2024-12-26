@@ -1,5 +1,6 @@
 @use 'src/app/design-system/colors.scss' as colors;
 @use 'src/app/design-system/layout.scss' as layout;
+@use 'src/app/design-system/media.scss' as media;
 @use 'src/app/design-system/text.scss' as text;
 
 .footer {
@@ -27,9 +28,11 @@
 .footer__text {
   @extend .text__ps;
   color: colors.$black-10;
+  text-align: center;
 
-  @media (min-width: 768px) {
+  @include media.tabletUp {
     margin-bottom: 0;
+    text-align: left;
   }
 }
 
