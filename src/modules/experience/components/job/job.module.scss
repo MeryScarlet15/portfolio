@@ -67,6 +67,10 @@
     flex-direction: column;
     gap: 8px;
   }
+
+  span {
+    color: colors.$teal-50;
+  }
 }
 
 .job__fade {
