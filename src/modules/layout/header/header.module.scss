@@ -1,10 +1,10 @@
-@use "src/app/design-system/z-index" as zIndex;
-@use "src/app/design-system/colors" as colors;
-@use "src/app/design-system/text" as text;
-@use "src/app/design-system/media" as media;
-@use "src/app/design-system/layout-variables" as layoutVariables;
+@use 'src/app/design-system/z-index' as zIndex;
+@use 'src/app/design-system/colors' as colors;
+@use 'src/app/design-system/text' as text;
+@use 'src/app/design-system/media' as media;
+@use 'src/app/design-system/layout-variables' as layoutVariables;
 
-@keyframes fadeIn {
+@keyframes fade-in {
   to {
     opacity: 1;
     transform: translateX(0);
@@ -45,7 +45,7 @@
   color: colors.$teal-50;
   opacity: 0;
   transform: translateX(-50px);
-  animation: fadeIn 0.5s forwards;
+  animation: fade-in 0.5s forwards;
 }
 
 .header__ul {
