@@ -11,7 +11,7 @@ export const Fence = () => {
       <span>high performance</span>. Additionally, I spearheaded the development
       of the main app’s product dashboard from the ground up, applying the same
       technologies and prioritizing a modular, reusable, and scalable
-      architecture. I further optimized performance by incorporating advanced
+      architecture. I further optimized performance by incorporating advanced{' '}
       <span>caching strategies</span>, to improve load times.
     </p>
   )
