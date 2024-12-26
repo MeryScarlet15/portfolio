@@ -21,12 +21,9 @@ export const Job = ({ job }: Props) => {
   const descriptionWrapperRef = useRef<HTMLDivElement>(null)
   const [showMoreButton, setShowMoreButton] = useState(false)
 
-  console.log(showMoreButton)
-
   useEffect(() => {
     if (descriptionWrapperRef.current) {
       const descriptionText = descriptionWrapperRef.current.innerText || ''
-      console.log(descriptionText)
       setShowMoreButton(descriptionText.length > 400)
     }
   }, [job.description])

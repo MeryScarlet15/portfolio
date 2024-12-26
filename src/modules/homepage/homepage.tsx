@@ -6,16 +6,18 @@ import { Hero } from '@/modules/hero/hero'
 import dynamic from 'next/dynamic'
 import { useInView } from 'react-intersection-observer'
 import styles from './homepage.module.scss'
-// Lazy-loaded components
+
 const About = dynamic(() => import('../about/about').then((mod) => mod.About), {
   suspense: true
 })
+
 const Skills = dynamic(
   () => import('../skills/skills').then((mod) => mod.Skills),
   {
     suspense: true
   }
 )
+
 const Experience = dynamic(
   () => import('../experience/experience').then((mod) => mod.Experience),
   {
