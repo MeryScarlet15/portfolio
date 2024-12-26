@@ -30,14 +30,17 @@ export const About: React.FC = () => {
         <div className={styles.about__text}>
           <p>
             I’m a passionate Full Stack Developer with over 6 years of
-            experience, based in Spain. I have expertise in Next.js, Nest.js,
-            Node.js, React, Typescript, and SEO, among other technologies.
+            experience, based in Spain. I have expertise in <span>Next.js</span>
+            , <span>Nest.js</span>, <span>Node.js</span>, <span>React</span>,{' '}
+            <span>Typescript</span>, and <span>SEO</span>, among other
+            technologies.
           </p>
           <p>
-            I give great importance to SEO, user experience, performance, and
-            clean code. I believe that a well-optimized, user-friendly
-            application with clean and efficient code is the key to delivering
-            great products.
+            I give great importance to <span>SEO</span>,{' '}
+            <span>user experience</span>, <span>performance</span>, and{' '}
+            <span>clean code</span>. I believe that a well-optimized,
+            user-friendly application with clean and efficient code is the key
+            to delivering great products.
           </p>
           <p>
             When I’m not coding, I enjoy exploring new technologies, traveling,
