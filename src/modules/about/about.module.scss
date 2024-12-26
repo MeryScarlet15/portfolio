@@ -1,7 +1,7 @@
-@use "src/app/design-system/media" as media;
-@use "src/app/design-system/text" as text;
-@use "src/app/design-system/colors" as colors;
-@use "src/app/design-system/layout";
+@use 'src/app/design-system/media' as media;
+@use 'src/app/design-system/text' as text;
+@use 'src/app/design-system/colors' as colors;
+@use 'src/app/design-system/layout';
 
 @keyframes fade-slide-up {
   from {
@@ -98,6 +98,9 @@
 }
 
 .about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   width: 100%;
   opacity: 0;
   transform: translateX(50px);
@@ -107,17 +110,10 @@
   @include media.tabletUp {
     max-width: 48%;
   }
-}
-
-.about__text {
-  padding-left: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
 
   p {
     @extend .text;
     line-height: 1.6;
-    color: #ccc;
+    color: colors.$white;
   }
 }
