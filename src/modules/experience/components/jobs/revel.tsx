@@ -10,20 +10,31 @@ export const Revel = () => {
 
       <ul>
         <li>
-          <span>Next.js</span>: To enable server-side rendering and improve SEO
+          <p>
+            <span>Next.js</span>: To enable server-side rendering and improve
+            SEO
+          </p>
         </li>
         <li>
-          <span>TypeScript</span>: For better project maintainability and error
-          detection
-        </li>
-        <li>HTML5: Ensuring proper use of HTML5 semantic tags</li>
-        <li>
-          <span>Styled Components</span>: For efficient styling and
-          component-based design
+          <p>
+            <span>TypeScript</span>: For better project maintainability and
+            error detection
+          </p>
         </li>
         <li>
-          <span>Storybook</span>: To document and test UI components with React
-          Library
+          <p>HTML5: Ensuring proper use of HTML5 semantic tags</p>
+        </li>
+        <li>
+          <p>
+            <span>Styled Components</span>: For efficient styling and
+            component-based design
+          </p>
+        </li>
+        <li>
+          <p>
+            <span>Storybook</span>: To document and test UI components with
+            React Library
+          </p>
         </li>
       </ul>
 
