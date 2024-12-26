@@ -73,6 +73,7 @@
   align-items: center;
   gap: 32px;
   overflow: hidden;
+
   @include media.tabletUp {
     flex-direction: row;
     justify-content: space-between;

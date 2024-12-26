@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
       <div className={styles.footer__container}>
         <div className={styles.footer__content}>
           <p className={styles.footer__text}>
-            © 2024 María Amado. All rights reserved.
+            2024 María Amado. Made with ❤️ in Spain.
           </p>
           <div className={styles.footer__icons}>
             <Link
