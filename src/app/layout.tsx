@@ -8,11 +8,11 @@ import { GeistMono } from 'geist/font/mono'
 
 export const metadata: Metadata = {
   title: 'Maria Amado | Full Stack Developer',
+  description: 'Full Stack Developer',
   openGraph: {
     title: 'Maria Amado | Full Stack Developer',
-    description: 'Full Stack Developer portfolio',
-    // TODO: Add url
-    url: '',
+    description: 'Full Stack Developer',
+    url: 'https://mery.dev',
     type: 'website'
   }
 }
