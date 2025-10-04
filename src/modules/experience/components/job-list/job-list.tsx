@@ -2,10 +2,19 @@ import { Aluxion } from '../jobs/aluxion'
 import { Cibernos } from '../jobs/cibernos'
 import { Dime } from '../jobs/dime'
 import { Fence } from '../jobs/fence'
+import { Filed } from '../jobs/filed'
 import { Revel } from '../jobs/revel'
 import { Thingtesting } from '../jobs/thingtesting'
 
 export const jobs = [
+  {
+    title: 'Member of Technical Staff',
+    company: 'Filed',
+    link: 'https://www.filed.com/',
+    isStartup: true,
+    period: '01/2025 - present',
+    description: <Filed />
+  },
   {
     title: 'Software Developer',
     company: 'Thingtesting',
