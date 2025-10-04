@@ -1,18 +1,21 @@
-import React from 'react'
-import styles from './skill.module.scss'
 import { ProgressBar } from '@/components/progress-bar/progress-bar'
+import styles from './skill.module.scss'
 
 interface Props {
   skill: {
-    name: string
+    category: string
+    technologies: string[]
     level: number
   }
 }
 
 export const Skill = ({ skill }: Props) => {
   return (
-    <article className={`${styles.skill}`} key={skill.name}>
-      <h3 className={styles.skill__name}>{skill.name}</h3>
+    <article className={`${styles.skill}`}>
+      <h3 className={styles.skill__category}>{skill.category}</h3>
+      <p className={styles.skill__technologies}>
+        {skill.technologies.join(', ')}
+      </p>
       <ProgressBar percentage={skill.level} />
     </article>
   )

@@ -1,21 +1,33 @@
-@use "src/app/design-system/colors.scss" as colors;
-@use "src/app/design-system/text.scss" as text;
+@use 'src/app/design-system/colors.scss' as colors;
+@use 'src/app/design-system/text.scss' as text;
 
 .skill {
-  background: colors.$black-50;
-  border-radius: 8px;
-  padding: 12px;
+  background: colors.$black-100;
+  border-radius: 10px;
+  padding: 20px;
   transition: all 0.3s ease-out;
+  border: 2px solid transparent;
 
   &:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background: lighten(colors.$black-50, 5%);
+    border: 2px solid colors.$teal-50;
+    box-shadow:
+      0 0 20px rgba(20, 184, 166, 0.4),
+      0 0 40px rgba(20, 184, 166, 0.2);
+    background: colors.$black-100;
     transform: scale(1.02);
   }
 }
 
-.skill__name {
-  @extend .text__xs_semi;
+.skill__category {
+  @extend .text__m_medium;
   color: colors.$white;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.skill__technologies {
+  @extend .text__ps;
+  color: colors.$black-30;
+  margin-bottom: 16px;
+  line-height: 1.4;
 }

@@ -1,20 +1,76 @@
 import React from 'react'
-import styles from './skills.module.scss'
 import { Skill } from './components/skill/skill'
+import styles from './skills.module.scss'
 
 const skills = [
-  { name: 'Nextjs', level: 100 },
-  { name: 'Nodejs', level: 100 },
-  { name: 'Nestjs', level: 100 },
-  { name: 'SEO', level: 100 },
-  { name: 'Typescript', level: 100 },
-  { name: 'GraphQL', level: 100 },
-  { name: 'React', level: 100 },
-  { name: 'Postgres', level: 100 },
-  { name: 'Cursor', level: 100 },
-  { name: 'OpenAI', level: 90 },
-  { name: 'Python', level: 80 },
-  { name: 'AWS', level: 80 }
+  {
+    category: 'Frontend',
+    technologies: [
+      'Next.js',
+      'Astro',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Caching techniques',
+      'Performance optimization'
+    ],
+    level: 100
+  },
+  {
+    category: 'Backend',
+    technologies: [
+      'Node.js',
+      'Nest.js',
+      'Python',
+      'GraphQL',
+      'PostgreSQL',
+      'Clean Architecture'
+    ],
+    level: 100
+  },
+  {
+    category: 'SEO & Performance',
+    technologies: [
+      'Core Web Vitals',
+      'Technical SEO',
+      'Competitive analysis',
+      'User intent analysis',
+      'Performance monitoring & audits'
+    ],
+    level: 100
+  },
+  {
+    category: 'AI & Automation',
+    technologies: [
+      'OpenAI',
+      'Claude',
+      'Gemini (Google)',
+      'Cursor IDE',
+      'Prompt engineering'
+    ],
+    level: 100
+  },
+  {
+    category: 'Cloud & DevOps',
+    technologies: ['Vercel', 'Google Cloud Platform', 'AWS', 'CI/CD', 'Docker'],
+    level: 100
+  },
+  {
+    category: 'UX / UI Development',
+    technologies: ['Accessibility', 'Responsive design', 'Design systems'],
+    level: 100
+  },
+
+  {
+    category: "Don't see the technology you need?",
+    technologies: [
+      'Fast learning of new technologies',
+      'Agile adaptation to any stack',
+      'Self-taught',
+      'Complex problem solving'
+    ],
+    level: 100
+  }
 ]
 
 export const Skills: React.FC = () => {
