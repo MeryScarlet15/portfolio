@@ -33,11 +33,20 @@
 
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 16px;
 
-  @media (min-width: 768px) {
+  @include media.phoneUp {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media.tabletUp {
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+  }
+
+  @include media.laptopUp {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
