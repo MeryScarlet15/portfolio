@@ -1,4 +1,3 @@
-import styles from './polygon-hr.module.scss'
 import React from 'react'
 
 const clipPaths = {
@@ -16,7 +15,7 @@ interface Props {
 export const PolygonHr = ({ direction = 'topRight', className }: Props) => {
   return (
     <hr
-      className={`${styles.polygon_hr} ${className}`}
+      className={`animate-fade-in m-0 h-[104px] border-none bg-teal-500 opacity-0 ${className}`}
       style={{
         clipPath: clipPaths[direction]
       }}

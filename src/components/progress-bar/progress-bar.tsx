@@ -1,4 +1,3 @@
-import styles from './progress-bar.module.scss'
 import React from 'react'
 
 interface Props {
@@ -7,9 +6,9 @@ interface Props {
 
 export const ProgressBar = ({ percentage }: Props) => {
   return (
-    <div className={styles.progress_bar}>
+    <div className="bg-black-40 h-[10px] w-full overflow-hidden rounded-[10px]">
       <div
-        className={styles.progress_bar__progress}
+        className="animate-fill-bar h-full w-0 origin-left rounded-[10px] bg-teal-500"
         style={{ width: `${percentage}%` }}></div>
     </div>
   )

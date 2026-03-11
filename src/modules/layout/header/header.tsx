@@ -1,20 +1,25 @@
 import Link from 'next/link'
 import React from 'react'
-import styles from './header.module.scss'
 
 const sections = ['About', 'Skills', 'Experience']
 
 export const Header: React.FC = () => {
   return (
-    <header className={styles.header}>
-      <nav className={styles.header__nav}>
-        <div className={styles.header__title}>&lt;MA/&gt;</div>
-        <ul className={styles.header__ul}>
+    <header className="fixed top-0 right-0 left-0 z-[400] flex items-center justify-center bg-[rgba(24,24,24,0.6)] backdrop-blur-[10px]">
+      <nav className="big-tablet:px-0 flex w-full max-w-[1080px] items-center justify-between p-4">
+        <div
+          className="animate-header-fade-in text-2xl leading-normal font-bold text-teal-500 opacity-0"
+          style={{ transform: 'translateX(-50px)' }}>
+          &lt;MA/&gt;
+        </div>
+        <ul className="tablet:flex tablet:gap-6 hidden">
           {sections.map((item) => (
-            <li key={item} className={styles.header__li}>
+            <li
+              key={item}
+              className="transition-transform duration-200 ease-out hover:scale-110 active:scale-95">
               <Link
                 href={`#${item.toLowerCase()}`}
-                className={styles.header__li__button}>
+                className="text-black-30 cursor-pointer text-sm leading-normal font-normal transition-colors duration-300 hover:font-bold hover:text-white">
                 {item}
               </Link>
             </li>

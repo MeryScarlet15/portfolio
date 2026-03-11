@@ -5,24 +5,15 @@ import { PolygonHr } from '@/components/hr/polygon-hr/polygon-hr'
 import { Hero } from '@/modules/hero/hero'
 import dynamic from 'next/dynamic'
 import { useInView } from 'react-intersection-observer'
-import styles from './homepage.module.scss'
 
-const About = dynamic(() => import('../about/about').then((mod) => mod.About), {
-  suspense: true
-})
+const About = dynamic(() => import('../about/about').then((mod) => mod.About))
 
-const Skills = dynamic(
-  () => import('../skills/skills').then((mod) => mod.Skills),
-  {
-    suspense: true
-  }
+const Skills = dynamic(() =>
+  import('../skills/skills').then((mod) => mod.Skills)
 )
 
-const Experience = dynamic(
-  () => import('../experience/experience').then((mod) => mod.Experience),
-  {
-    suspense: true
-  }
+const Experience = dynamic(() =>
+  import('../experience/experience').then((mod) => mod.Experience)
 )
 
 export const HomePage: React.FC = () => {
@@ -44,7 +35,7 @@ export const HomePage: React.FC = () => {
       <Hero />
       <PolygonHr direction="topRight" />
 
-      <div ref={aboutRef} className={styles.homepage__section} id="about">
+      <div ref={aboutRef} className="min-h-[600px] overflow-hidden" id="about">
         {aboutInView && (
           <Suspense fallback={<div>Loading About...</div>}>
             <About />
@@ -53,7 +44,10 @@ export const HomePage: React.FC = () => {
       </div>
       <PolygonHr direction="bottomLeft" />
 
-      <div ref={skillsRef} className={styles.homepage__section} id="skills">
+      <div
+        ref={skillsRef}
+        className="min-h-[600px] overflow-hidden"
+        id="skills">
         {skillsInView && (
           <Suspense fallback={<div>Loading Skills...</div>}>
             <Skills />
@@ -64,7 +58,7 @@ export const HomePage: React.FC = () => {
 
       <div
         ref={experienceRef}
-        className={styles.homepage__section}
+        className="min-h-[600px] overflow-hidden"
         id="experience">
         {experienceInView && (
           <Suspense fallback={<div>Loading Experience...</div>}>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Skill } from './components/skill/skill'
-import styles from './skills.module.scss'
 
 const skills = [
   {
@@ -75,13 +74,15 @@ const skills = [
 
 export const Skills: React.FC = () => {
   return (
-    <section className={styles.skills}>
-      <div className={styles.skills__container}>
-        <h2 className={styles.skills__title}>Main Technologies</h2>
-        <ul className={styles.skills__grid}>
+    <section className="bg-black-60 tablet:py-20 py-10">
+      <div className="section-wrapper">
+        <h2 className="animate-fade-in-up tablet:mb-8 mb-6 text-center text-[32px] leading-normal font-medium text-white opacity-0">
+          Main Technologies
+        </h2>
+        <ul className="phone:grid-cols-2 tablet:grid-cols-3 tablet:gap-6 laptop:grid-cols-2 grid grid-cols-1 gap-4">
           {skills.map((skill, index) => (
             <li
-              className={styles.skills__grid_element}
+              className="animate-fade-in-up opacity-0"
               key={index}
               style={{ animationDelay: `${index * 0.1}s` }}>
               <Skill skill={skill} />

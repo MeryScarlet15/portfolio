@@ -1,16 +1,17 @@
 import React from 'react'
-import styles from './experience.module.scss'
 import { Job } from './components/job/job'
 import { jobs } from './components/job-list/job-list'
 
 export const Experience: React.FC = () => {
   return (
-    <section className={styles.experience}>
-      <h2 className={styles.experience__title}>Experience</h2>
-      <ul className={styles.experience__job_list}>
+    <section className="tablet:py-20 flex flex-col gap-6 py-10">
+      <h2 className="animate-fade-in-up text-center text-[32px] leading-normal font-bold text-white opacity-0">
+        Experience
+      </h2>
+      <ul className="section-wrapper flex flex-col gap-6">
         {jobs.map((job, index) => (
           <li
-            className={styles.experience__job_element}
+            className="animate-fade-in-up opacity-0"
             key={index}
             style={{ animationDelay: `${index * 0.1}s` }}>
             <Job job={job} />

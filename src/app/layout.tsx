@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import Head from 'next/head'
-import './design-system/reset.scss'
-import './design-system/colors.scss'
+import './globals.css'
 import { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'

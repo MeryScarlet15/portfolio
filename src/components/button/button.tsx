@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import styles from './button.module.scss'
 import { Link } from '@/components/link/link'
 
 interface Props {
@@ -13,6 +12,9 @@ interface Props {
   href?: string
   target?: React.HTMLAttributeAnchorTarget
 }
+
+const buttonClasses =
+  'cursor-pointer w-full h-12 flex items-center justify-center rounded px-3 text-base font-normal leading-normal transition-all duration-200 ease-in-out border border-teal-500 bg-teal-500 text-white shadow-[0px_4px_31px_0px_rgba(0,0,0,0.15)] hover:border-white hover:bg-white hover:text-black-100'
 
 export const Button: React.FC<Props> = ({
   text,
@@ -27,7 +29,7 @@ export const Button: React.FC<Props> = ({
     return (
       <button
         role={role}
-        className={`${styles.button} ${styles.button_primary} ${className}`}
+        className={`${buttonClasses} ${className}`}
         aria-label={ariaLabel}
         onClick={() => {
           onClick?.()
@@ -39,7 +41,7 @@ export const Button: React.FC<Props> = ({
 
   return (
     <Link
-      className={`${styles.button} ${styles.button_primary} ${className}`}
+      className={`${buttonClasses} ${className}`}
       href={href || '/'}
       target={target}
       aria-label={ariaLabel}

@@ -1,6 +1,5 @@
 import React from 'react'
 
-import styles from './main.module.scss'
 import { Header } from '@/modules/layout/header/header'
 import { Footer } from '@/modules/layout/footer/footer'
 import { Cursor } from '@/components/cursor/cursor'
@@ -20,7 +19,10 @@ export default function Main({
       <Cursor />
       <Header />
 
-      <main className={`${styles.main}  ${className}`}>{children}</main>
+      <main
+        className={`tablet:pt-[104px] big-tablet:pt-[104px] min-h-screen pt-[88px] ${className}`}>
+        {children}
+      </main>
       <Footer />
     </>
   )
