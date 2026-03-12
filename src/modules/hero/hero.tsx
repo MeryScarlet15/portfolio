@@ -1,7 +1,6 @@
 import React from 'react'
 import { Button } from '@/components/button/button'
 import Image from 'next/image'
-import heroImage from 'public/images/hero.png'
 import { Link } from '@/components/link/link'
 import { GithubIcon, LinkedinIcon } from '@/components/icons/icons'
 
@@ -61,11 +60,11 @@ export const Hero: React.FC = () => {
         <div className="animate-rock-image tablet:w-[450px] relative h-auto w-[280px] -rotate-2 grayscale-[30%]">
           <Image
             className="block h-auto w-full object-contain"
-            src={heroImage}
-            quality={80}
+            src="/images/hero.webp"
             alt="María Amado - Full Stack Developer"
             priority
-            width={450}
+            width={1080}
+            height={1186}
             sizes="(max-width: 480px) 250px,
            (max-width: 768px) 300px,
            450px"

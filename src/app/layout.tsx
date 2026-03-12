@@ -46,6 +46,13 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.className} ${GeistMono.className}`}>
       <head>
         <link
+          rel="preload"
+          as="image"
+          type="image/webp"
+          href="/images/hero.webp"
+          fetchPriority="high"
+        />
+        <link
           rel="icon"
           type="image/png"
           sizes="32x32"

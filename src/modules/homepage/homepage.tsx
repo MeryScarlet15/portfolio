@@ -1,10 +1,44 @@
 'use client'
 
-import React, { Suspense } from 'react'
+import React, {
+  Suspense,
+  useCallback,
+  useEffect,
+  useRef,
+  useState
+} from 'react'
 import { PolygonHr } from '@/components/hr/polygon-hr/polygon-hr'
 import { Hero } from '@/modules/hero/hero'
 import dynamic from 'next/dynamic'
-import { useInView } from 'react-intersection-observer'
+
+function useInView(threshold = 0.1) {
+  const [inView, setInView] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  const setRef = useCallback((node: HTMLDivElement | null) => {
+    ref.current = node
+  }, [])
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el || inView) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true)
+          observer.disconnect()
+        }
+      },
+      { threshold }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [inView, threshold])
+
+  return [setRef, inView] as const
+}
 
 const About = dynamic(() => import('../about/about').then((mod) => mod.About))
 
@@ -17,18 +51,9 @@ const Experience = dynamic(() =>
 )
 
 export const HomePage: React.FC = () => {
-  const [aboutRef, aboutInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
-  const [skillsRef, skillsInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
-  const [experienceRef, experienceInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
+  const [aboutRef, aboutInView] = useInView()
+  const [skillsRef, skillsInView] = useInView()
+  const [experienceRef, experienceInView] = useInView()
 
   return (
     <>

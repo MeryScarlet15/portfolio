@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import aboutImage from 'public/images/about.jpg'
+import aboutImage from 'public/images/about.webp'
 
 export const About: React.FC = () => {
   return (

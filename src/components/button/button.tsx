@@ -14,7 +14,7 @@ interface Props {
 }
 
 const buttonClasses =
-  'cursor-pointer w-full h-12 flex items-center justify-center rounded px-3 text-base font-normal leading-normal transition-all duration-200 ease-in-out border border-teal-500 bg-teal-500 text-white shadow-[0px_4px_31px_0px_rgba(0,0,0,0.15)] hover:border-white hover:bg-white hover:text-black-100'
+  'cursor-pointer w-full h-12 flex items-center justify-center rounded px-3 text-base font-normal leading-normal transition-all duration-200 ease-in-out border border-teal-500 bg-teal-500 text-black-100 shadow-[0px_4px_31px_0px_rgba(0,0,0,0.15)] hover:border-white hover:bg-white hover:text-black-100'
 
 export const Button: React.FC<Props> = ({
   text,

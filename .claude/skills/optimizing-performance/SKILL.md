@@ -8,7 +8,7 @@ description: Audit and fix web performance, SEO, and Core Web Vitals issues in t
 ## Arguments
 
 - `mode` (optional): `audit` (report only) or `fix` (report + apply fixes). Default: `fix`
-- `focus` (optional): `images`, `bundle`, `meta`, `layout-shift`, `all`. Default: `all`
+- `focus` (optional): `images`, `bundle`, `meta`, `layout-shift`, `lcp`, `accessibility`, `all`. Default: `all`
 
 If no arguments provided, run a full audit and fix all issues found.
 
@@ -26,14 +26,23 @@ Read `context/detection-commands.md` and run every check. Record all findings wi
 
 Group findings by category:
 - **Image optimization** — unoptimized images, missing dimensions, quality settings, placeholders
+- **LCP** — LCP image discoverability, preload hints, fetchpriority, render-blocking resources
 - **Bundle size** — heavy dependencies, missing code splitting, unnecessary client-side JS
 - **Meta & SEO** — broken meta tags, missing viewport, missing OG tags, broken `next/head` usage
 - **Layout shift (CLS)** — missing dimensions, opacity-0 animations, large min-heights on mobile
+- **Accessibility** — contrast ratios, missing alt text, ARIA attributes
 - **Render blocking** — inline data URIs, unextracted assets, blocking scripts
 
 ## 2. Manual Review
 
 For each flagged file, read and verify:
+
+### LCP (Largest Contentful Paint)
+- The LCP image must be discoverable in the initial HTML — add `<link rel="preload">` in layout head
+- LCP images inside client components need preload because they aren't in the server-rendered HTML until hydration
+- Use string `src` paths (e.g., `src="/images/hero.webp"`) for LCP images so the URL is stable and matches the preload href
+- Static imports (`import img from 'public/...'`) get hashed URLs that can't be preloaded reliably
+- Verify `fetchPriority="high"` is on the preload link
 
 ### Images (`next/image`)
 - `quality` should be 75–85 (never 100)
@@ -43,7 +52,8 @@ For each flagged file, read and verify:
 - `priority` only on above-the-fold hero/LCP images
 
 ### Next.js Config
-- `images.unoptimized` must NOT be `true`
+- `images.unoptimized: true` is intentional (avoids hosting costs) — do NOT change it
+- Since Next.js won't auto-optimize, all images must be manually converted to WebP (<150KB) using `cwebp -q 80`
 - Check for missing `experimental.optimizePackageImports` if large libs are used
 
 ### Layout & Metadata (App Router)
@@ -57,6 +67,12 @@ For each flagged file, read and verify:
 - Verify desktop-only components use `dynamic()` with `ssr: false` (via client wrapper)
 - Check `'use client'` is only on components that need interactivity
 
+### Accessibility (Performance-Related)
+- Check color contrast ratios — WCAG AA requires 4.5:1 for normal text, 3:1 for large text
+- White text (#fff) on teal-500 (#14b8a6) = 2.48 ratio (FAIL). Use dark text on bright backgrounds
+- Use python3 or a tool to calculate: `contrast = (L1 + 0.05) / (L2 + 0.05)` where L is relative luminance
+- Verify all interactive elements have accessible names
+
 ### Layout Shift
 - Images must have explicit `width`/`height` or container dimensions
 - `opacity-0` animation elements must reserve space (use `transform` not layout props)
@@ -66,13 +82,15 @@ For each flagged file, read and verify:
 
 ```
 CRITICAL (major score impact — must fix):
-- Image optimization disabled
+- LCP image not discoverable in initial HTML (missing preload)
 - Broken meta tags (next/head in App Router)
 - Missing viewport configuration
-- Unoptimized LCP image (quality=100, no format conversion)
+- Images >200KB not in WebP format (since Next.js optimization is disabled)
+- WCAG contrast ratio failures on interactive elements
 
 HIGH (noticeable score impact — should fix):
-- Heavy dependency for minimal usage (e.g., icon library for 3 icons)
+- LCP image using static import (hashed URL can't be preloaded)
+- Heavy dependency for minimal usage (e.g., icon library for 3 icons, IntersectionObserver lib for simple useInView)
 - Desktop-only component loaded on all devices
 - Missing blur placeholder on lazy images
 - Oversized images without responsive sizes
@@ -91,12 +109,11 @@ LOW (best practice):
 
 Apply fixes in this priority order:
 
-1. **Config fixes** — next.config.js image optimization, package imports
-2. **Meta fixes** — Move `next/head` to metadata exports, add missing meta
-3. **Image fixes** — Quality, placeholders, sizes, priority
-4. **Bundle fixes** — Replace heavy deps with inline code, add dynamic imports
-5. **Layout shift fixes** — Responsive min-heights, image dimensions
-6. **Asset fixes** — Extract inline data URIs to static files
+1. **Meta fixes** — Move `next/head` to metadata exports, add missing meta/viewport
+2. **Image fixes** — Convert to WebP via `cwebp -q 80`, add blur placeholders, fix quality/sizes
+3. **Bundle fixes** — Replace heavy deps with inline code, add dynamic imports for desktop-only components
+4. **Layout shift fixes** — Responsive min-heights, image dimensions
+5. **Asset fixes** — Extract inline data URIs to static files in `public/`
 
 After applying fixes, run:
 ```bash
