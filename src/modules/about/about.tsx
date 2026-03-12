@@ -19,7 +19,7 @@ export const About: React.FC = () => {
             height={400}
             className="w-full bg-white transition-all duration-300 ease-out hover:-rotate-2"
             loading="lazy"
-            placeholder="empty"
+            placeholder="blur"
             sizes="(max-width: 768px) 90vw, (max-width: 1200px) 400px, 400px"
             style={{
               objectFit: 'cover',

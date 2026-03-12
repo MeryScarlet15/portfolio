@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 
 import { Header } from '@/modules/layout/header/header'
 import { Footer } from '@/modules/layout/footer/footer'
-import { Cursor } from '@/components/cursor/cursor'
+import { LazyCursor } from '@/components/cursor/lazy-cursor'
 
 interface Props {
   children: React.ReactNode
@@ -16,7 +16,9 @@ export default function Main({
 }: Props): React.ReactElement {
   return (
     <>
-      <Cursor />
+      <Suspense>
+        <LazyCursor />
+      </Suspense>
       <Header />
 
       <main

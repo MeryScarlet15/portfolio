@@ -35,7 +35,10 @@ export const HomePage: React.FC = () => {
       <Hero />
       <PolygonHr direction="topRight" />
 
-      <div ref={aboutRef} className="min-h-[600px] overflow-hidden" id="about">
+      <div
+        ref={aboutRef}
+        className="tablet:min-h-[600px] min-h-[300px] overflow-hidden"
+        id="about">
         {aboutInView && (
           <Suspense fallback={<div>Loading About...</div>}>
             <About />
@@ -46,7 +49,7 @@ export const HomePage: React.FC = () => {
 
       <div
         ref={skillsRef}
-        className="min-h-[600px] overflow-hidden"
+        className="tablet:min-h-[600px] min-h-[300px] overflow-hidden"
         id="skills">
         {skillsInView && (
           <Suspense fallback={<div>Loading Skills...</div>}>
@@ -58,7 +61,7 @@ export const HomePage: React.FC = () => {
 
       <div
         ref={experienceRef}
-        className="min-h-[600px] overflow-hidden"
+        className="tablet:min-h-[600px] min-h-[300px] overflow-hidden"
         id="experience">
         {experienceInView && (
           <Suspense fallback={<div>Loading Experience...</div>}>

@@ -24,3 +24,4 @@ Single Next.js 16 portfolio site. Read [AGENTS.md](../AGENTS.md) for full archit
 | [review-copies](./skills/review-copies/SKILL.md) | Reviewing UI copy/text |
 | [reviewing-pr](./skills/reviewing-pr/SKILL.md) | Before creating a PR |
 | [cleaning-orphan-files](./skills/cleaning-orphan-files/SKILL.md) | Finding unused files |
+| [optimizing-performance](./skills/optimizing-performance/SKILL.md) | Auditing performance, SEO, PageSpeed |

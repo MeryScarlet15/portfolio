@@ -1,19 +1,40 @@
-/* eslint-disable @next/next/no-page-custom-font */
-import Head from 'next/head'
 import './globals.css'
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 
 export const metadata: Metadata = {
   title: 'Maria Amado | Full Stack Developer',
   description: 'Full Stack Developer',
+  applicationName: 'Maria Amado Portfolio',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Maria Amado Portfolio'
+  },
+  formatDetection: {
+    telephone: false
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
+    'msapplication-TileColor': '#64de9c',
+    'msapplication-tap-highlight': 'no'
+  },
   openGraph: {
     title: 'Maria Amado | Full Stack Developer',
     description: 'Full Stack Developer',
     url: 'https://mery.dev',
     type: 'website'
   }
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 5,
+  viewportFit: 'cover',
+  themeColor: '#1c1c1c'
 }
 
 export default function RootLayout({
@@ -36,35 +57,12 @@ export default function RootLayout({
           sizes="16x16"
           href="/favicon/favicon-16x16.png"
         />
-
         <link
           rel="apple-touch-icon"
           sizes="60x60"
           href="/favicon/apple-touch-icon.png"
         />
       </head>
-      <Head>
-        <meta
-          name="environment"
-          content={process.env.ENVIRONMENT ? 'production' : 'development'}
-        />
-        <meta name="application-name" content="Maria Amado Portfolio" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta
-          name="apple-mobile-web-app-title"
-          content="Maria Amado Portfolio"
-        />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="msapplication-TileColor" content="#64de9c" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="theme-color" content="#fff" />
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no,maximum-scale=5, viewport-fit=cover"
-        />
-      </Head>
       <body>{children}</body>
     </html>
   )
