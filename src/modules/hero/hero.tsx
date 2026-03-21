@@ -66,7 +66,6 @@ export const Hero: React.FC = () => {
             srcSet="/images/hero-250w.webp 250w, /images/hero-300w.webp 300w, /images/hero-450w.webp 450w, /images/hero.webp 1080w"
             sizes="(max-width: 480px) 250px, (max-width: 768px) 300px, 450px"
             fetchPriority="high"
-            decoding="async"
           />
         </div>
       </article>

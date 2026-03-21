@@ -21,6 +21,9 @@ export const Cursor: React.FC = () => {
   }, [])
 
   useEffect(() => {
+    const mq = window.matchMedia('(min-width: 923px)')
+    if (!mq.matches) return
+
     const updatePosition = (e: MouseEvent) => {
       target.current = { x: e.clientX, y: e.clientY }
     }

@@ -1,7 +1,6 @@
 import './globals.css'
 import { Metadata, Viewport } from 'next'
 import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
 
 const description =
   'Full Stack Developer with 6+ years of experience specializing in Next.js, React, TypeScript, and Node.js. Based in Spain, open to remote roles.'
@@ -78,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${GeistSans.className} ${GeistMono.className}`}>
+    <html lang="en" className={GeistSans.className}>
       <head>
         <link
           rel="preload"

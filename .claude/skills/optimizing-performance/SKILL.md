@@ -43,6 +43,7 @@ For each flagged file, read and verify:
 - Use string `src` paths (e.g., `src="/images/hero.webp"`) for LCP images so the URL is stable and matches the preload href
 - Static imports (`import img from 'public/...'`) get hashed URLs that can't be preloaded reliably
 - Verify `fetchPriority="high"` is on the preload link
+- **Never use `decoding="async"` on LCP images** — async decoding tells the browser it can defer image decode, which delays LCP paint. Omit the attribute or use `decoding="sync"` for LCP images
 
 ### Images (`next/image` and native `<img>`)
 - `quality` should be 75–85 (never 100)
@@ -62,7 +63,6 @@ When Next.js image optimization is disabled, `next/image` cannot generate respon
      srcSet="/images/hero-250w.webp 250w, /images/hero-300w.webp 300w, /images/hero-450w.webp 450w, /images/hero.webp 1080w"
      sizes="(max-width: 480px) 250px, (max-width: 768px) 300px, 450px"
      fetchPriority="high"
-     decoding="async"
      width={1080}
      height={1186}
    />
@@ -94,6 +94,20 @@ When Next.js image optimization is disabled, `next/image` cannot generate respon
 - Flag dependencies used in <3 places that could be replaced with inline code
 - Verify desktop-only components use `dynamic()` with `ssr: false` (via client wrapper)
 - Check `'use client'` is only on components that need interactivity
+- **Unused font imports**: Check all font imports in layout.tsx against actual usage. A font imported but never applied via a CSS class still triggers a full download. Remove unused fonts (e.g., GeistMono if no `font-mono` class exists in the codebase)
+
+### Desktop-Only JS Running on Mobile (TBT)
+- Components hidden via CSS (`hidden tablet:block`) still execute their JavaScript on all devices
+- **Event listeners and RAF loops** in hidden components waste CPU and increase Total Blocking Time (TBT) on mobile
+- Gate JS execution with `window.matchMedia()` to skip entirely on non-matching viewports:
+  ```ts
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 923px)')
+    if (!mq.matches) return
+    // ... event listeners and RAF loop only run on tablet+
+  }, [])
+  ```
+- This is especially critical for cursor animations, parallax effects, and other desktop-only interactions
 - **Browserslist**: Add `.browserslistrc` targeting modern browsers (Chrome 92+, Firefox 90+, Safari 15.4+) to eliminate legacy polyfills (e.g., Array.prototype.at/flat/flatMap ~14KB)
 - **Animation libraries**: If framer-motion or similar is used in <3 files, replace with CSS transitions + `requestAnimationFrame` (saves ~70KB). Use lerp for smooth cursor following:
   ```ts
@@ -124,7 +138,10 @@ CRITICAL (major score impact — must fix):
 
 HIGH (noticeable score impact — should fix):
 - LCP image using static import (hashed URL can't be preloaded)
+- LCP image with `decoding="async"` (delays paint of largest element)
 - Heavy dependency for minimal usage (e.g., icon library for 3 icons, IntersectionObserver lib for simple useInView)
+- Desktop-only JS running on mobile (RAF loops, event listeners in CSS-hidden components)
+- Unused font imports (downloaded but never applied)
 - Desktop-only component loaded on all devices
 - Missing blur placeholder on lazy images
 - Oversized images without responsive sizes

@@ -77,6 +77,12 @@ grep -rn "from 'next/image'" src/ --include="*.tsx" 2>/dev/null
 ```
 **Cross-reference** with `images.unoptimized: true` in next.config.js: If unoptimized mode is on, `next/image` cannot generate srcSets. LCP images should use native `<img>` with manual `srcSet` instead.
 
+### LCP image using decoding="async"
+```bash
+grep -rn 'decoding="async"' src/ --include="*.tsx" | grep -i "hero\|banner\|lcp"
+```
+**If found on LCP image**: HIGH — `decoding="async"` tells the browser it can defer image decode, which delays LCP paint. Remove the attribute or use `decoding="sync"` for LCP images. Non-LCP images below the fold can use `decoding="async"`.
+
 ### Missing responsive image variants
 ```bash
 grep -rn "srcSet\|srcset" src/ --include="*.tsx" 2>/dev/null
@@ -134,6 +140,26 @@ grep -rn "react-intersection-observer\|use-debounce\|classnames\|clsx" package.j
 grep -rn "hidden.*tablet:block\|hidden.*md:block\|hidden.*lg:block" src/ --include="*.tsx"
 ```
 **Cross-reference**: If the component uses heavy JS (event listeners, animation libs), it should be dynamically imported.
+
+### Desktop-only JS running on mobile (TBT)
+```bash
+grep -rn "hidden.*tablet:block\|hidden.*md:block\|hidden.*lg:block" src/ --include="*.tsx" -l
+```
+Then cross-check each file for:
+```bash
+grep -rn "requestAnimationFrame\|addEventListener\|setInterval" <file>
+```
+**If found**: HIGH — CSS `hidden` only hides the element visually. The JS (RAF loops, event listeners) still executes on mobile, wasting CPU and increasing TBT. Gate JS execution with `window.matchMedia('(min-width: <breakpoint>)')` to skip entirely on non-matching viewports.
+
+### Unused font imports
+```bash
+grep -rn "from 'geist/font\|from 'next/font\|from '@next/font" src/app/layout.tsx
+```
+For each font import, check if it's actually used:
+```bash
+grep -rn "font-mono\|font-serif" src/ --include="*.tsx" --include="*.css"
+```
+**If font is imported but no corresponding class is used**: HIGH — unnecessary font download adds to page weight and delays FCP. Remove the import.
 
 ### Missing browserslist configuration
 ```bash
