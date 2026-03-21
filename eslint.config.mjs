@@ -24,7 +24,8 @@ export default tseslint.config(
       '@typescript-eslint/prefer-namespace-keyword': 'error',
       '@typescript-eslint/triple-slash-reference': 'error',
       '@typescript-eslint/unified-signatures': 'error',
-      'react/no-unescaped-entities': 'off'
+      'react/no-unescaped-entities': 'off',
+      '@next/next/no-img-element': 'off'
     }
   }
 )

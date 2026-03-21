@@ -65,6 +65,24 @@ grep -n "rel=\"preload\"" src/app/layout.tsx 2>/dev/null | grep -v "fetchPriorit
 ```
 **If found without fetchPriority**: HIGH — preloaded LCP images should have `fetchPriority="high"`.
 
+### LCP preload missing responsive srcSet
+```bash
+grep -n "rel=\"preload\"" src/app/layout.tsx 2>/dev/null | grep -v "imageSrcSet"
+```
+**If found without imageSrcSet**: CRITICAL — when responsive variants exist, preload must use `imageSrcSet` and `imageSizes` instead of `href` so the browser downloads the right size. A `href` preload downloads the full-size image even on mobile.
+
+### LCP image using next/image with unoptimized mode
+```bash
+grep -rn "from 'next/image'" src/ --include="*.tsx" 2>/dev/null
+```
+**Cross-reference** with `images.unoptimized: true` in next.config.js: If unoptimized mode is on, `next/image` cannot generate srcSets. LCP images should use native `<img>` with manual `srcSet` instead.
+
+### Missing responsive image variants
+```bash
+grep -rn "srcSet\|srcset" src/ --include="*.tsx" 2>/dev/null
+```
+**If NOT found AND images.unoptimized is true**: HIGH — without srcSet, mobile devices download full-size images. Generate variants with the seo-image-optimizer: `python optimize.py ./public/images --in-place --scan-code ./src`
+
 ---
 
 ## Accessibility (Performance Score Impact)
@@ -115,7 +133,19 @@ grep -rn "react-intersection-observer\|use-debounce\|classnames\|clsx" package.j
 ```bash
 grep -rn "hidden.*tablet:block\|hidden.*md:block\|hidden.*lg:block" src/ --include="*.tsx"
 ```
-**Cross-reference**: If the component uses heavy JS (framer-motion, event listeners), it should be dynamically imported.
+**Cross-reference**: If the component uses heavy JS (event listeners, animation libs), it should be dynamically imported.
+
+### Missing browserslist configuration
+```bash
+cat .browserslistrc 2>/dev/null || grep -A5 '"browserslist"' package.json 2>/dev/null
+```
+**If NOT found**: HIGH — without browserslist, bundlers include legacy polyfills (Array.prototype.at/flat/flatMap, Object.hasOwn, etc.) adding ~14KB. Add `.browserslistrc` targeting Chrome 92+, Firefox 90+, Safari 15.4+, Edge 92+.
+
+### Animation library for minimal usage
+```bash
+grep -rn "from 'framer-motion'\|from \"framer-motion\"\|from 'react-spring'\|from \"react-spring\"" src/ --include="*.tsx" --include="*.ts" -l
+```
+**Count files**: If animation library is used in <=2 files, replace with CSS transitions + requestAnimationFrame. framer-motion alone adds ~70KB to the bundle.
 
 ---
 

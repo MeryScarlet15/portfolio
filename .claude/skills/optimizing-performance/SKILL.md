@@ -44,16 +44,44 @@ For each flagged file, read and verify:
 - Static imports (`import img from 'public/...'`) get hashed URLs that can't be preloaded reliably
 - Verify `fetchPriority="high"` is on the preload link
 
-### Images (`next/image`)
+### Images (`next/image` and native `<img>`)
 - `quality` should be 75–85 (never 100)
 - Static imports should use `placeholder="blur"`
 - Lazy images must have `loading="lazy"` (non-priority only)
 - `sizes` attribute should match actual rendered sizes per breakpoint
 - `priority` only on above-the-fold hero/LCP images
 
+#### Manual srcSet (required when `images.unoptimized: true`)
+When Next.js image optimization is disabled, `next/image` cannot generate responsive srcSets. For the LCP image:
+1. **Use native `<img>`** instead of `next/image` — avoids shipping the Image component JS for no benefit
+2. **Generate responsive variants** using the seo-image-optimizer: `python optimize.py ./public/images --in-place --scan-code ./src`
+3. **Wire srcSet manually** matching the `sizes` attribute breakpoints:
+   ```tsx
+   <img
+     src="/images/hero.webp"
+     srcSet="/images/hero-250w.webp 250w, /images/hero-300w.webp 300w, /images/hero-450w.webp 450w, /images/hero.webp 1080w"
+     sizes="(max-width: 480px) 250px, (max-width: 768px) 300px, 450px"
+     fetchPriority="high"
+     decoding="async"
+     width={1080}
+     height={1186}
+   />
+   ```
+4. **Update the preload** in layout.tsx to use `imageSrcSet` and `imageSizes` (not `href`):
+   ```tsx
+   <link
+     rel="preload"
+     as="image"
+     type="image/webp"
+     imageSrcSet="/images/hero-250w.webp 250w, ..."
+     imageSizes="(max-width: 480px) 250px, ..."
+     fetchPriority="high"
+   />
+   ```
+
 ### Next.js Config
 - `images.unoptimized: true` is intentional (avoids hosting costs) — do NOT change it
-- Since Next.js won't auto-optimize, all images must be manually converted to WebP (<150KB) using `cwebp -q 80`
+- Since Next.js won't auto-optimize, all images must be manually converted to WebP (<150KB) using the seo-image-optimizer or `cwebp -q 80`
 - Check for missing `experimental.optimizePackageImports` if large libs are used
 
 ### Layout & Metadata (App Router)
@@ -66,6 +94,12 @@ For each flagged file, read and verify:
 - Flag dependencies used in <3 places that could be replaced with inline code
 - Verify desktop-only components use `dynamic()` with `ssr: false` (via client wrapper)
 - Check `'use client'` is only on components that need interactivity
+- **Browserslist**: Add `.browserslistrc` targeting modern browsers (Chrome 92+, Firefox 90+, Safari 15.4+) to eliminate legacy polyfills (e.g., Array.prototype.at/flat/flatMap ~14KB)
+- **Animation libraries**: If framer-motion or similar is used in <3 files, replace with CSS transitions + `requestAnimationFrame` (saves ~70KB). Use lerp for smooth cursor following:
+  ```ts
+  current.x += (target.x - current.x) * 0.15 // in rAF loop
+  el.style.transform = `translate3d(${x}px, ${y}px, 0)`
+  ```
 
 ### Accessibility (Performance-Related)
 - Check color contrast ratios — WCAG AA requires 4.5:1 for normal text, 3:1 for large text

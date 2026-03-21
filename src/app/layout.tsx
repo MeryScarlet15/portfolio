@@ -84,7 +84,8 @@ export default function RootLayout({
           rel="preload"
           as="image"
           type="image/webp"
-          href="/images/hero.webp"
+          imageSrcSet="/images/hero-250w.webp 250w, /images/hero-300w.webp 300w, /images/hero-450w.webp 450w, /images/hero.webp 1080w"
+          imageSizes="(max-width: 480px) 250px, (max-width: 768px) 300px, 450px"
           fetchPriority="high"
         />
         <link
