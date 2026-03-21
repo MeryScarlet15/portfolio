@@ -10,7 +10,7 @@ Run ALL of these checks. Record every match with file path and line number.
 `images.unoptimized: true` is set in next.config.js to avoid hosting costs. This means:
 - Next.js will NOT auto-convert to WebP/AVIF or resize images
 - **All images must be manually optimized** before adding to `public/images/`
-- Use `cwebp -q 80 input.png -o output.webp` to convert images
+- Use `cwebp -q 65 -alpha_q 50 -m 6 input.png -o output.webp` to convert images
 - Target: <150KB per image, WebP format preferred
 
 ### Image quality set to 100
@@ -87,7 +87,7 @@ grep -rn 'decoding="async"' src/ --include="*.tsx" | grep -i "hero\|banner\|lcp"
 ```bash
 grep -rn "srcSet\|srcset" src/ --include="*.tsx" 2>/dev/null
 ```
-**If NOT found AND images.unoptimized is true**: HIGH — without srcSet, mobile devices download full-size images. Generate variants with the seo-image-optimizer: `python optimize.py ./public/images --in-place --scan-code ./src`
+**If NOT found AND images.unoptimized is true**: HIGH — without srcSet, mobile devices download full-size images. Generate variants with cwebp: `cwebp -q 65 -alpha_q 50 -m 6 -resize <width> 0 input.webp -o output.webp`
 
 ---
 

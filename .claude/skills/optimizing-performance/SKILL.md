@@ -55,7 +55,7 @@ For each flagged file, read and verify:
 #### Manual srcSet (required when `images.unoptimized: true`)
 When Next.js image optimization is disabled, `next/image` cannot generate responsive srcSets. For the LCP image:
 1. **Use native `<img>`** instead of `next/image` — avoids shipping the Image component JS for no benefit
-2. **Generate responsive variants** using the seo-image-optimizer: `python optimize.py ./public/images --in-place --scan-code ./src`
+2. **Generate responsive variants** using cwebp: `cwebp -q 65 -alpha_q 50 -m 6 -resize <width> 0 input.webp -o output.webp`
 3. **Wire srcSet manually** matching the `sizes` attribute breakpoints:
    ```tsx
    <img
@@ -81,7 +81,7 @@ When Next.js image optimization is disabled, `next/image` cannot generate respon
 
 ### Next.js Config
 - `images.unoptimized: true` is intentional (avoids hosting costs) — do NOT change it
-- Since Next.js won't auto-optimize, all images must be manually converted to WebP (<150KB) using the seo-image-optimizer or `cwebp -q 80`
+- Since Next.js won't auto-optimize, all images must be manually converted to WebP (<150KB) using `cwebp -q 65 -alpha_q 50 -m 6`
 - Check for missing `experimental.optimizePackageImports` if large libs are used
 
 ### Layout & Metadata (App Router)
@@ -161,7 +161,7 @@ LOW (best practice):
 Apply fixes in this priority order:
 
 1. **Meta fixes** — Move `next/head` to metadata exports, add missing meta/viewport
-2. **Image fixes** — Convert to WebP via `cwebp -q 80`, add blur placeholders, fix quality/sizes
+2. **Image fixes** — Convert to WebP via `cwebp -q 65 -alpha_q 50 -m 6`, add blur placeholders, fix quality/sizes
 3. **Bundle fixes** — Replace heavy deps with inline code, add dynamic imports for desktop-only components
 4. **Layout shift fixes** — Responsive min-heights, image dimensions
 5. **Asset fixes** — Extract inline data URIs to static files in `public/`
