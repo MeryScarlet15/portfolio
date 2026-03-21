@@ -14,8 +14,9 @@ interface Props {
 
 export const PolygonHr = ({ direction = 'topRight', className }: Props) => {
   return (
-    <hr
-      className={`animate-fade-in m-0 h-[104px] border-none bg-teal-500 opacity-0 ${className}`}
+    <div
+      aria-hidden="true"
+      className={`animate-fade-in m-0 h-[104px] bg-teal-500 opacity-0 ${className}`}
       style={{
         clipPath: clipPaths[direction]
       }}

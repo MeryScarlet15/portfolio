@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build:app": "next build",
     "start": "next start",
-    "lint": "next lint --max-warnings=0 && pnpm prettier:check",
+    "lint": "eslint src --max-warnings=0 && bun run prettier:check",
     "prettier:check": "prettier --check \"{src,scripts}/**/*.{ts,js,tsx}\"",
     "prettier": "prettier --write \"{src,scripts}/**/*.{ts,js,tsx}\""
   },
@@ -21,15 +21,16 @@
     "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/node": "^20",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "eslint": "^8",
+    "eslint": "^9",
     "eslint-config-next": "16.1.6",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "typescript-eslint": "^8.57.1"
   }
 }

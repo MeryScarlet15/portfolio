@@ -4,7 +4,8 @@ import { HomePage } from '@/modules/homepage/homepage'
 
 export const metadata: Metadata = {
   title: 'Maria Amado | Full Stack Developer',
-  description: 'Full Stack Developer portfolio'
+  description:
+    'Full Stack Developer with 6+ years of experience specializing in Next.js, React, TypeScript, and Node.js. Based in Spain, open to remote roles.'
 }
 
 const Home = async () => {

@@ -15,7 +15,7 @@ export const Link: React.FC<MainLinkProps> = (props: MainLinkProps) => {
   const isExternal = typeof href === 'string' && href.match(/^https?:\/\//)
 
   if (isExternal) {
-    externalLinkProps = { target: '_blank', rel: 'noopener' }
+    externalLinkProps = { target: '_blank', rel: 'noopener noreferrer' }
   }
 
   return (

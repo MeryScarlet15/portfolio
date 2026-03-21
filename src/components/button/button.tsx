@@ -28,7 +28,6 @@ export const Button: React.FC<Props> = ({
   if (role !== 'link') {
     return (
       <button
-        role={role}
         className={`${buttonClasses} ${className}`}
         aria-label={ariaLabel}
         onClick={() => {

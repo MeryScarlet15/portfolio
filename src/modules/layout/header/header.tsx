@@ -6,7 +6,9 @@ const sections = ['About', 'Skills', 'Experience']
 export const Header: React.FC = () => {
   return (
     <header className="fixed top-0 right-0 left-0 z-[400] flex items-center justify-center bg-[rgba(24,24,24,0.6)] backdrop-blur-[10px]">
-      <nav className="big-tablet:px-0 flex w-full max-w-[1080px] items-center justify-between p-4">
+      <nav
+        aria-label="Main navigation"
+        className="big-tablet:px-0 flex w-full max-w-[1080px] items-center justify-between p-4">
         <div
           className="animate-header-fade-in text-2xl leading-normal font-bold text-teal-500 opacity-0"
           style={{ transform: 'translateX(-50px)' }}>

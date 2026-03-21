@@ -3,10 +3,17 @@ import { Metadata, Viewport } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 
+const description =
+  'Full Stack Developer with 6+ years of experience specializing in Next.js, React, TypeScript, and Node.js. Based in Spain, open to remote roles.'
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mery.dev'),
   title: 'Maria Amado | Full Stack Developer',
-  description: 'Full Stack Developer',
+  description,
   applicationName: 'Maria Amado Portfolio',
+  authors: [{ name: 'María Amado', url: 'https://mery.dev' }],
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/' },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -22,9 +29,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Maria Amado | Full Stack Developer',
-    description: 'Full Stack Developer',
+    description,
     url: 'https://mery.dev',
+    siteName: 'Maria Amado Portfolio',
+    locale: 'en_US',
     type: 'website'
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Maria Amado | Full Stack Developer',
+    description
   }
 }
 
@@ -35,6 +49,27 @@ export const viewport: Viewport = {
   maximumScale: 5,
   viewportFit: 'cover',
   themeColor: '#1c1c1c'
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': 'María Amado',
+  'jobTitle': 'Full Stack Developer',
+  'url': 'https://mery.dev',
+  'sameAs': [
+    'https://github.com/MeryScarlet15',
+    'https://www.linkedin.com/in/maria-amado-854b6116a'
+  ],
+  'knowsAbout': [
+    'Next.js',
+    'React',
+    'TypeScript',
+    'Node.js',
+    'Nest.js',
+    'SEO',
+    'Performance Optimization'
+  ]
 }
 
 export default function RootLayout({
@@ -68,6 +103,10 @@ export default function RootLayout({
           rel="apple-touch-icon"
           sizes="60x60"
           href="/favicon/apple-touch-icon.png"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body>{children}</body>

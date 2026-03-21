@@ -35,13 +35,13 @@ export const Hero: React.FC = () => {
             <div className="tablet:gap-4 flex gap-6">
               <Link
                 href="https://github.com/MeryScarlet15"
-                className="text-black-30 tablet:h-6 tablet:w-6 h-8 w-8 transition-all duration-300 ease-out hover:scale-110 hover:text-white active:scale-95"
+                className="text-black-30 flex h-12 w-12 items-center justify-center transition-all duration-300 ease-out hover:scale-110 hover:text-white active:scale-95"
                 aria-label="Github">
                 <GithubIcon size={24} />
               </Link>
               <Link
                 href="https://www.linkedin.com/in/maria-amado-854b6116a"
-                className="text-black-30 tablet:h-6 tablet:w-6 h-8 w-8 transition-all duration-300 ease-out hover:scale-110 hover:text-white active:scale-95"
+                className="text-black-30 flex h-12 w-12 items-center justify-center transition-all duration-300 ease-out hover:scale-110 hover:text-white active:scale-95"
                 aria-label="LinkedIn">
                 <LinkedinIcon size={24} />
               </Link>

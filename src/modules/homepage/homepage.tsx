@@ -65,7 +65,12 @@ export const HomePage: React.FC = () => {
         className="tablet:min-h-[600px] min-h-[300px] overflow-hidden"
         id="about">
         {aboutInView && (
-          <Suspense fallback={<div>Loading About...</div>}>
+          <Suspense
+            fallback={
+              <div className="sr-only" role="status">
+                Loading About section
+              </div>
+            }>
             <About />
           </Suspense>
         )}
@@ -77,7 +82,12 @@ export const HomePage: React.FC = () => {
         className="tablet:min-h-[600px] min-h-[300px] overflow-hidden"
         id="skills">
         {skillsInView && (
-          <Suspense fallback={<div>Loading Skills...</div>}>
+          <Suspense
+            fallback={
+              <div className="sr-only" role="status">
+                Loading Skills section
+              </div>
+            }>
             <Skills />
           </Suspense>
         )}
@@ -89,7 +99,12 @@ export const HomePage: React.FC = () => {
         className="tablet:min-h-[600px] min-h-[300px] overflow-hidden"
         id="experience">
         {experienceInView && (
-          <Suspense fallback={<div>Loading Experience...</div>}>
+          <Suspense
+            fallback={
+              <div className="sr-only" role="status">
+                Loading Experience section
+              </div>
+            }>
             <Experience />
           </Suspense>
         )}
