@@ -18,10 +18,7 @@ export const Experience: React.FC = () => {
         Experience
       </h2>
       <div className="section-wrapper">
-        <ol className="relative flex flex-col gap-6">
-          {/* Timeline vertical line */}
-          <div className="absolute top-0 bottom-0 left-[5px] w-px bg-white/10" />
-
+        <ol className="relative flex flex-col gap-6 before:absolute before:top-0 before:bottom-0 before:left-[5px] before:w-px before:bg-white/10">
           {visibleJobs.map((job, index) => (
             <li
               key={index}
