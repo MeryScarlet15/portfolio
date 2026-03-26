@@ -1,10 +1,10 @@
-import React from 'react'
-
 export const Cibernos = () => {
   return (
     <p>
-      I focused on fundamentals and development of advanced applications with
-      the tool PLAN using SQL
+      First professional exposure to enterprise software development. Built
+      advanced applications using <span>SQL</span> and the PLAN platform,
+      learning the fundamentals of working in a structured engineering
+      environment.
     </p>
   )
 }

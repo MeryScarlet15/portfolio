@@ -1,7 +1,12 @@
 import Link from 'next/link'
 import React from 'react'
 
-const sections = ['About', 'Skills', 'Experience']
+const sections = [
+  { label: 'About', id: 'about' },
+  { label: 'How I Work', id: 'how-i-work' },
+  { label: 'Skills', id: 'skills' },
+  { label: 'Experience', id: 'experience' }
+]
 
 export const Header: React.FC = () => {
   return (
@@ -16,13 +21,11 @@ export const Header: React.FC = () => {
         </div>
         <ul className="tablet:flex tablet:gap-6 hidden">
           {sections.map((item) => (
-            <li
-              key={item}
-              className="transition-transform duration-200 ease-out hover:scale-110 active:scale-95">
+            <li key={item.id} className="">
               <Link
-                href={`#${item.toLowerCase()}`}
-                className="text-black-30 cursor-pointer text-sm leading-normal font-normal transition-colors duration-300 hover:font-bold hover:text-white">
-                {item}
+                href={`#${item.id}`}
+                className="text-black-30 cursor-pointer text-sm leading-normal font-normal transition-all duration-300 hover:text-teal-500 hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.6)]">
+                {item.label}
               </Link>
             </li>
           ))}

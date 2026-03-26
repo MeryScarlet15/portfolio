@@ -12,7 +12,7 @@ export const jobs = [
     company: 'Filed',
     link: 'https://www.filed.com/',
     isStartup: true,
-    period: '01/2025 - present',
+    period: 'Jan 2025 — Present',
     description: <Filed />
   },
   {
@@ -20,45 +20,45 @@ export const jobs = [
     company: 'Thingtesting',
     link: 'https://thingtesting.com/',
     isStartup: true,
-    period: '12/2022 - 01/2025 (2 years 1 month)',
+    period: 'Dec 2022 — Jan 2025',
     description: <Thingtesting />
   },
   {
-    title: 'Frontend developer (Freelance)',
+    title: 'Frontend Developer, Freelance',
     company: 'Fence',
     link: 'https://fence.finance/',
     isStartup: true,
-    period: '10/2023 - 06/2024 (8 months)',
+    period: 'Oct 2023 — Jun 2024',
     description: <Fence />
   },
   {
-    title: 'Full-stack Developer',
+    title: 'Full-Stack Developer',
     company: 'Revel',
     link: 'https://driverevel.com/',
     isStartup: true,
-    period: '12/2019 - 12/2022 (3 years 1 month)',
+    period: 'Dec 2019 — Dec 2022',
     description: <Revel />
   },
   {
-    title: 'Frontend developer (Freelance)',
+    title: 'Frontend Developer, Freelance',
     company: 'Dime',
     link: 'https://www.ridedime.app',
     isStartup: true,
-    period: '07/2020 - 08/2022 (2 years 2 months)',
+    period: 'Jul 2020 — Aug 2022',
     description: <Dime />
   },
   {
-    title: 'Front End Developer',
+    title: 'Front-End Developer',
     company: 'Aluxion Labs',
     isStartup: false,
-    period: '01/2019 - 12/2019 (12 months)',
+    period: 'Jan 2019 — Dec 2019',
     description: <Aluxion />
   },
   {
     title: 'Intern',
     company: 'Cibernos',
     isStartup: false,
-    period: '10/2018 - 01/2019 (4 months)',
+    period: 'Oct 2018 — Jan 2019',
     description: <Cibernos />
   }
 ]

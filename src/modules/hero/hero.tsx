@@ -18,19 +18,26 @@ export const Hero: React.FC = () => {
             'linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, #1c1c1c 100%)'
         }}></div>
       <article className="section-wrapper tablet:flex-row tablet:justify-between tablet:gap-10 items-center gap-8 overflow-hidden">
-        <div className="tablet:gap-10 flex max-w-[624px] flex-col gap-6 overflow-hidden">
-          <h1 className="animate-slide-in tablet:text-left tablet:text-[64px] flex flex-col gap-2 text-center text-[32px] leading-normal font-bold text-white">
-            Hi there! <br />
+        <div className="tablet:gap-8 flex max-w-[624px] flex-col gap-5 overflow-hidden">
+          <p className="animate-slide-in tablet:text-left text-center text-base font-medium text-teal-500 opacity-0">
+            Hi there!
+          </p>
+
+          <p
+            className="animate-slide-in tablet:text-left tablet:text-[40px] text-center text-[28px] leading-[1.1] font-bold tracking-tight text-white opacity-0"
+            style={{ animationDelay: '0.1s' }}>
             I'm María Amado
-            <br />
-            <span className="tablet:text-left tablet:text-[32px] text-center text-2xl leading-normal font-medium text-teal-500">
-              A Javascript Fullstack Developer
-            </span>
+          </p>
+
+          <h1
+            className="animate-slide-in tablet:text-left tablet:text-[48px] text-center text-[28px] leading-[1.1] font-bold tracking-tight text-white uppercase opacity-0"
+            style={{ animationDelay: '0.2s' }}>
+            I turn startup ideas into production-ready products
           </h1>
 
           <div
-            className="animate-slide-in tablet:flex-row-reverse tablet:justify-end flex flex-col items-center justify-center gap-6"
-            style={{ animationDelay: '0.2s' }}>
+            className="animate-slide-in tablet:flex-row-reverse tablet:justify-end flex flex-col items-center justify-center gap-6 opacity-0"
+            style={{ animationDelay: '0.4s' }}>
             <div className="tablet:gap-4 flex gap-6">
               <Link
                 href="https://github.com/MeryScarlet15"
@@ -60,7 +67,7 @@ export const Hero: React.FC = () => {
           <img
             className="block h-auto w-full object-contain"
             src="/images/hero.webp"
-            alt="María Amado - Full Stack Developer"
+            alt="María Amado"
             width={1080}
             height={1186}
             srcSet="/images/hero-250w.webp 250w, /images/hero-300w.webp 300w, /images/hero-450w.webp 450w, /images/hero.webp 1080w"

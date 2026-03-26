@@ -1,13 +1,14 @@
 import './globals.css'
 import { Metadata, Viewport } from 'next'
 import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
 
 const description =
-  'Full Stack Developer with 6+ years of experience specializing in Next.js, React, TypeScript, and Node.js. Based in Spain, open to remote roles.'
+  'Full stack developer who takes startup ideas from zero to launch. I build production-ready products with clean code, great UX, and performance baked in.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mery.dev'),
-  title: 'Maria Amado | Full Stack Developer',
+  title: 'Maria Amado | Turning Startup Ideas Into Products',
   description,
   applicationName: 'Maria Amado Portfolio',
   authors: [{ name: 'María Amado', url: 'https://mery.dev' }],
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     'msapplication-tap-highlight': 'no'
   },
   openGraph: {
-    title: 'Maria Amado | Full Stack Developer',
+    title: 'Maria Amado | Turning Startup Ideas Into Products',
     description,
     url: 'https://mery.dev',
     siteName: 'Maria Amado Portfolio',
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Maria Amado | Full Stack Developer',
+    title: 'Maria Amado | Turning Startup Ideas Into Products',
     description
   }
 }
@@ -77,12 +78,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={GeistSans.className}>
+    <html lang="en" className={`${GeistSans.className} ${GeistMono.variable}`}>
       <head>
         <link
           rel="preload"
           as="image"
-          type="image/webp"
           imageSrcSet="/images/hero-250w.webp 250w, /images/hero-300w.webp 300w, /images/hero-450w.webp 450w, /images/hero.webp 1080w"
           imageSizes="(max-width: 480px) 250px, (max-width: 768px) 300px, 450px"
           fetchPriority="high"

@@ -2,19 +2,23 @@ export const Filed = () => {
   return (
     <>
       <p>
-        As a <span>full stack developer</span> at Filed, I contribute across
-        both frontend and backend projects. On the frontend, I work with{' '}
-        <span>Next.js</span> and <span>React</span>, building <span>fast</span>,{' '}
-        <span>scalable</span>, and <span>user-friendly interfaces</span>.
+        Building a tax automation platform that uses <span>AI</span> to simplify
+        complex filing workflows. <span>Leading teams</span> while working
+        across the full stack with the latest <span>JavaScript (TypeScript)</span> and{' '}
+        <span>Python</span> ecosystems.
       </p>
 
       <p>
-        On the backend, I develop services using <span>Python</span> and{' '}
-        <span>TypeScript</span>, integrating <span>LLM APIs</span> directly into
-        the product to provide advanced <span>AI-powered features</span> for
-        users. I focus on creating <span>clean</span>, <span>maintainable</span>
-        , and <span>scalable architectures</span> while ensuring{' '}
-        <span>high performance</span> and reliability.
+        Shipping <span>AI-powered features</span> — from intelligent document
+        parsing to fully automated <span>AI tax workflows</span> — that turn
+        hours of manual work into one-click actions for users.
+      </p>
+
+      <p>
+        Built the product analytics and feedback system with{' '}
+        <span>PostHog</span>, and improved the company&apos;s{' '}
+        <span>Claude infrastructure</span> to empower every team member with AI
+        tooling.
       </p>
     </>
   )

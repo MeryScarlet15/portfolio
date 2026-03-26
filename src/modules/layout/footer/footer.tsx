@@ -13,19 +13,19 @@ export const Footer: React.FC = () => {
           <div className="flex gap-2">
             <Link
               href="https://github.com/MeryScarlet15"
-              className="text-black-10 flex h-12 w-12 items-center justify-center transition-[transform,color] duration-300 ease-out hover:scale-110 hover:text-white active:scale-95"
+              className="text-black-10 flex h-9 w-9 items-center justify-center transition-[transform,color] duration-300 ease-out hover:scale-110 hover:text-white active:scale-95"
               aria-label="Github">
               <GithubIcon size={20} />
             </Link>
             <Link
               href="https://www.linkedin.com/in/maria-amado-854b6116a"
-              className="text-black-10 flex h-12 w-12 items-center justify-center transition-[transform,color] duration-300 ease-out hover:scale-110 hover:text-white active:scale-95"
+              className="text-black-10 flex h-9 w-9 items-center justify-center transition-[transform,color] duration-300 ease-out hover:scale-110 hover:text-white active:scale-95"
               aria-label="LinkedIn">
               <LinkedinIcon size={20} />
             </Link>
             <Link
               href="mailto:maria_amado15@hotmail.com"
-              className="text-black-10 flex h-12 w-12 items-center justify-center transition-[transform,color] duration-300 ease-out hover:scale-110 hover:text-white active:scale-95"
+              className="text-black-10 flex h-9 w-9 items-center justify-center transition-[transform,color] duration-300 ease-out hover:scale-110 hover:text-white active:scale-95"
               aria-label="Email">
               <MailIcon size={20} />
             </Link>
