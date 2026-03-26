@@ -4,8 +4,8 @@ export const Filed = () => {
       <p>
         Building a tax automation platform that uses <span>AI</span> to simplify
         complex filing workflows. <span>Leading teams</span> while working
-        across the full stack with the latest <span>JavaScript (TypeScript)</span> and{' '}
-        <span>Python</span> ecosystems.
+        across the full stack with the latest{' '}
+        <span>JavaScript (TypeScript)</span> and <span>Python</span> ecosystems.
       </p>
 
       <p>
